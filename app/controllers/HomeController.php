@@ -54,17 +54,10 @@ class HomeController extends BaseController {
 
 	public function getLogin()
 	{
-		return View::make('user_home', array('pageTitle' => 'treatment plan'));
+		return View::make('user_home', array('pageTitle' => 'home'));
 		
 	}
 
-
-	public function loggedIn()
-	{
-	    $data = array(
-        	'heading' => 'home',
-        	'body' => 'u so sexeh'
-    );
 
 
 	}

@@ -86,7 +86,7 @@
 			style = "width:50px; position:absolute; top:130px; left:{{ $row->x_position }}px;"
 			id="{{ $row->id }}" class = "mood_icons"
  			 /> 
- 			 <img class="delete" style="position:absolute; top:130px; left:{{ $row->x_position+35 }}px;" src="{{ asset('assets/images/delete.png') }}" />
+ 			 <img class="delete" style="position:absolute; top:130px; left:{{ $row->x_position+35 }}px;" id="{{ $row->id }}" src="{{ asset('assets/images/delete.png') }}" />
 		@endforeach
 		<br />
 		<img style="margin-top:150px" src="{{ asset('assets/images/mood_chart.png') }}" width="1000"  />
@@ -99,15 +99,15 @@
 
 	<div id="tool_bar_container">
 	<div id="tool_bar">
-		<div class="unselected_tool" id="tracker1" style="margin-left:10px;"><a href="v1_individual_journal_dev.php"><img src="/icon_journal.png"></a></div>
-		<div class="unselected_tool" id="tracker2"><a href="v1_individual_breathing_dev.php"><img src="/icon_breathing.png"></a></div>
-		<div class="selected_tool" id="tracker3" style="opacity:1.0"><a href="mood"><img src="/icon_mood.png"></a></div>
-		<div class="unselected_tool" id="tracker4"><a href="v1_individual_sleep_dev.php"><img src="/icon_sleep.png"></a></div>
-		<div class="unselected_tool" id="tracker5"><a href="v1_individual_meds_dev.php"><img src="/icon_meds.png"></a></div>
-		<div class="unselected_tool" id="tracker6"><a href="v1_individual_treatments_dev.php"><img src="/icon_treatments.png"></a></div>
-		<div class="unselected_tool" id="tracker7"><a href="v1_individual_relationships_dev.php"><img src="/icon_relationships.png"></a></div>
-		<div class="unselected_tool" id="tracker8"><a href="v1_individual_diet_dev.php"><img src="/icon_diet.png"></a></div>
-		<div class="unselected_tool" id="tracker9"><a href="v1_individual_settings_dev.php"><img src="/icon_settings.png"></a></div>		
+		<div class="unselected_tool" id="tracker1" style="margin-left:10px;"><a href="v1_individual_journal_dev.php"><img src="{{ asset('assets/images/icon_journal.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker2"><a href="v1_individual_breathing_dev.php"><img src="{{ asset('assets/images/icon_breathing.png') }}"></a></div>
+		<div class="selected_tool" id="tracker3" style="opacity:1.0"><a href="mood"><img src="{{ asset('assets/images/icon_mood.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker4"><a href="v1_individual_sleep_dev.php"><img src="{{ asset('assets/images/icon_sleep.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker5"><a href="v1_individual_meds_dev.php"><img src="{{ asset('assets/images/icon_meds.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker6"><a href="v1_individual_treatments_dev.php"><img src="{{ asset('assets/images/icon_treatments.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker7"><a href="v1_individual_relationships_dev.php"><img src="{{ asset('assets/images/icon_relationships.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker8"><a href="v1_individual_diet_dev.php"><img src="{{ asset('assets/images/icon_diet.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker9"><a href="v1_individual_settings_dev.php"><img src="{{ asset('assets/images/icon_settings.png') }}"></a></div>		
 	</div>
 	</div>
 

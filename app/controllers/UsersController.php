@@ -13,7 +13,7 @@ class UsersController extends BaseController {
 
 	public function getIndex()
 	{
-		echo 'fack';
+		echo 'fk';
 	}
 
 	public function getTest()

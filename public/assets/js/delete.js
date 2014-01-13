@@ -2,36 +2,35 @@ $(document).ready(function() {
 		var data={_method: 'delete' };
 
 	
-		$('.delete').hide().click(
+		$('.delete').click(
 			function()
 			{
 				var answer = confirm('Are you sure you want to delete this?');
 
 				if (answer === true)
 				{
-					alert('hi');
-					$.ajax({
-						url: 'delete/'+id,
-						type: 'post',
-						success: function(result){
-							alert(result);
-						}
-					});
 
+				}
+
+				else
+				{
+					return false;
 				}
 
 			});
 
-		$('.mood_icons').hover(
-			function()
-			{
-				$(this).next('.delete').show();
-			},
+		// $('.mood_icons,').hover(
+		// 	function()
+		// 	{
+		// 		$(this).next('form').children().show();
+		// 		//alert($(this).next('form input[type="submit"]'));
+		// 		// .css( "display", "none" );
+		// 	},
 
-			function()
-			{
-				$(this).next('.delete').hide();
-			});          
+		// 	function()
+		// 	{
+		// 		$(this).next('form').children().hide();
+		// 	});          
 				
 
 

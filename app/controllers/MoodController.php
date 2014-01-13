@@ -4,9 +4,7 @@ class MoodController extends BaseController {
 
 	public function getIndex()
 	{
-		// $mood = Mood::where('created_at', '>=', new DateTime('today'))->lists('x_position');
-		// var_dump($mood);
-
+	
 		//round minute to nearest half hour, if rounding up to next hour, an hour is added to $hour
 		$minute = (date('i') >= 30 ? '30':'00');
 		
@@ -14,16 +12,16 @@ class MoodController extends BaseController {
 
 		$roundedNow = $hour. ':' .$minute;
 
+		$user_id = User::find(Auth::user()->id);
+
 		$data = array(
-						'entries' => Mood::getTodaysEntries(),
+						'entries' => $user_id->moods,
 						'roundedNow' => $roundedNow,
-						'pageTitle' => 'treatment plan'
+						'pageTitle' => 'mood tracker'
 					 );
-		
-		// foreach ($rows as $row)
-		// {
-		// 	echo $row->mood_type, $row->x_position;
-		// }
+		$queries = DB::getQueryLog();
+		$last_query = end($queries);
+
 		return View::make('mood', $data);
 
 	}
@@ -60,13 +58,21 @@ class MoodController extends BaseController {
 			$mood->date = new DateTime;
 			$mood->updated_at = new DateTime;
        		$mood->created_at = new DateTime;
-       		$mood->username = Auth::user()->username;
+       		$mood->user_id = Auth::user()->id;
        		$mood->save();
 
+			return Redirect::to('mood');
 
 		}
 
 	}
+
+	public function postDelete($id)
+		{
+			$entry = Mood::find($id);
+			$entry->delete();
+			return Redirect::to('mood');
+		}	
 
 
 }

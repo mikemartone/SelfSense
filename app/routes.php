@@ -22,8 +22,16 @@ Route::post('login', 'HomeController@postLogin');
 Route::group(array('before' => 'auth'), function()
 {
 	Route::get('login', 'HomeController@getLogin');
+
 	Route::get('mood', 'MoodController@getIndex');
 	Route::post('mood', 'MoodController@postMoodEntries');
+	Route::post('mood/delete/{id}', array(
+		'as' => 'mood.delete',
+		'uses' => 'MoodController@postDelete'
+		));
+	
+	Route::get('sleep', 'SleepController@getIndex');
+	Route::post('sleep', 'SleepController@postSleepEntries');
 });
 
 // Event::listen('illuminate.query', function() {

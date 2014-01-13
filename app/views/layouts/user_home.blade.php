@@ -5,7 +5,7 @@
  <title>Selfsense {{isset($pageTitle) ? $pageTitle: ''}}</title>
 	{{HTML::style('assets/css/style_master.css')}}
 	<link rel="shortcut icon" href="{{asset('assets/images/icon.ico')}}"> 
-	<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
 </head>
 <body>
 

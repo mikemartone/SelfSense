@@ -118,7 +118,7 @@
 					<img src="{{asset('assets/images/icon_breathing.png')}}">
 				</div>
 				<div class="home_tool_icon" id="sleep" style="margin-right:0px;">
-					<a href="v1_individual_sleep_dev.php">
+					<a href="sleep">
 					<img src="{{asset('assets/images/icon_sleep.png')}}">
 				</div>
 			</div>

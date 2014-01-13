@@ -12,7 +12,7 @@ class CreateMoodTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('mood', function(Blueprint $table)
+		Schema::create('moods', function(Blueprint $table)
 		{
 			$table->increments('id');
 
@@ -32,7 +32,7 @@ class CreateMoodTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('mood');
+		Schema::drop('moods');
 	}
 
 }

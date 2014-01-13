@@ -48,5 +48,26 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->email;
 	}
+ 	
+	/**
+	* Get the user's daily mood entries
+	*
+	* @return array
+	*/
+	public function moods()
+	{
+		return $this->hasMany('Mood')->where('created_at', '>=', new DateTime('yesterday'));
+	}
+
+		/**
+	 * Return last night's sleep entries
+	 *
+	 * @return array
+	 */
+	public function sleepEntries()
+	{
+		return $this->hasMany('Sleep')->where('created_at', '>=', new DateTime('yesterday'));
+
+	}
 
 }

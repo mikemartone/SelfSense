@@ -2,48 +2,16 @@
 
 @section('content')
 
-
-
-
-<script type="text/javascript">  
-$(document).ready(function() {
-	
-		$(".unselected_tool").mouseenter(
-            function() {
-				
-                $(this).stop(true,true).animate({ 'margin-top': '10px' }, 'fast');
-	            $(this).animate({ 'margin-top': '20px' }, 300);
-				
-
-            });
-		$(".unselected_tool").mouseleave(
-            function() {
-                $(this).stop(true,true).animate({ 'margin-top': '35px' }, 300);
-	            //$(this).animate({ 'margin-top': '10px' }, '1000');
-				
-
-            });
-
-    });
-
-
-</script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script>
 	   
-$(function() {
-	var input_value =[];
-
-	//default starting y position for icons
-	//var draggables=[['start',25],['interruption0',70],['interruption1',70],['interruption2',70],['note0',130],['note1',130],['note2',130],['stop',210]];
-	
+$(function() {	
 	var default_values = [['start',25],['interruption0',70],['interruption1',70],['interruption2',70],['note0',130],['note1',130],['note2',130],['stop',210]];
-	//default starting y position for icons if entry exists
+	
 	var entries = <?php echo $entries?>;
 
 
-
-	//entries put into a loopable array
+	//if an an entry exists, use values in database, else use default y position
 	 if(typeof entries[0] != 'undefined'){
 	var draggables = [
 							['start', entries[0].start],
@@ -62,8 +30,6 @@ $(function() {
 	}
 
 
-
-
 	for (var i=0;i<8;i++){
 
 		$('#'+draggables[i][0]).draggable(
@@ -71,7 +37,6 @@ $(function() {
 		{
 
 			containment: $('container'),
-			snap:true,
 			drag: function(){
 				var offset = $(this).offset();
 				var xPos = offset.left;
@@ -84,28 +49,40 @@ $(function() {
 
 			create: function(event, ui){
 
-				//if no database entry exists, place icons in default position, otherwise, put in previously set position
+				//if no database entry exists, place icons in default position
+				if(typeof entries[0] === 'undefined')
+				{
+					$(this).css("top", draggables[i][1]+"px");
+				}
+				else
+				{
+					//check each entry- if set, place icon in that position
+					if(entries[0][this.id] != null)
+				 	{
+						 $(this).css("left",draggables[i][1]+"px"); 
+						 $(this).css("top","131px"); 
+						 $(this).css("height","75px");
+						 $(this).css("width","75px");
+					}
+					else
+					{
+						//put each icon in default position
+						$(this).css("top", draggables[i][1]+"px");
 
-				 if(entries[0][this.id] != 0)
-			 {
-				 $(this).css("left",draggables[i][1]+"px"); 
-				 $(this).css("top","123px"); 
-				 $(this).css("height","75px");
-				 $(this).css("width","75px");
-			}
-			else
-			{
-				$(this).css("top", default_values[i][1]+"px");
+					}
 
-			}
+				}
+
+				
 
 
 				var finalOffset = $(this).position();
 				var finalxPos = finalOffset.left;
 				var finalyPos = finalOffset.top;
+
 				if(finalxPos == 25)
 				{
-					$('input[name=' +this.id+']').val(null);
+					$('input[name=' +this.id+']').val(0);
 				}
 				else
 				{
@@ -124,16 +101,23 @@ $(function() {
 				var finalOffset = $(this).position();
 				var finalxPos = finalOffset.left;
 				var finalyPos = finalOffset.top;	
-				$('input[name=' +this.id+']').val(finalxPos);
+				if(finalxPos == 25)
+				{
+					$('input[name=' +this.id+']').val(0);
+				}
+				else
+				{
+					$('input[name=' +this.id+']').val(finalxPos);
+				}
 				$('input[name=' +this.id+'y]').val(finalyPos);
 			},
 			revert: function (event, ui) {
             //overwrite original position
-            for(var count=0; count < draggables.length; count++){
-            	if(draggables[count][0] == $(this).attr("id")){
-            		var default_left = draggables[count][1];	
-            	}
-            }
+			for(var count=0; count < draggables.length; count++){
+				if(draggables[count][0] == $(this).attr("id")){
+				var default_left = default_values[count][1];	
+				}
+			}
             $(this).data("uiDraggable").originalPosition = {
                 top: default_left,
                 left: 25				

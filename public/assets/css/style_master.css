@@ -1032,7 +1032,6 @@ button:hover{
 }
 
 #start {
-	z-index:9999;
     width: 50px;
     height: 50px;
 	background-image:url('../images/sleep_start.png');
@@ -1040,12 +1039,11 @@ button:hover{
 	background-repeat:no-repeat;
 	 background-position:center; 
 	position:relative;
-	top:10px;
+	top:25px;
 	left:25px;
 }
 
 #stop {
-	z-index:9999;
     width: 50px;
     height: 50px;
 	background-image:url('../images/sleep_end.png');
@@ -1123,4 +1121,433 @@ text-align:center;
 	height:310px; 
 	width:98px;
 
+}
+
+
+
+
+
+
+
+/*///////////////////////////////////////////////////////////////////////////////*/
+/* meds----------------------------------------------------------------------*/
+/*///////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+#meds_list{
+	width:200px;
+	height:325px;
+	margin:10px 0 0 0;
+	display:inline;
+	float:left;
+	background:red;
+}
+#am_pm{
+	width:35px;
+	height:325px;
+	margin:10px 0 0 0;
+	display:inline;
+	float:left;
+}
+#am{
+	width:35px;
+	height:150px;
+	margin:25px 0 0 0;
+}
+#am p{
+	color:#2e75b6;
+	font-family:swiss_light;
+	font-size:25px;
+	line-height:150px;
+	text-align:center;
+	/* Safari */
+	-webkit-transform: rotate(-90deg);
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
+	/* IE */
+	-ms-transform: rotate(-90deg);
+	/* Opera */
+	-o-transform: rotate(-90deg);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	margin:0;
+}
+#pm{
+	width:35px;
+	height:150px;
+}
+#pm p{
+	color:#2e75b6;
+	font-family:swiss_light;
+	font-size:25px;
+	line-height:150px;
+	text-align:center;
+	/* Safari */
+	-webkit-transform: rotate(-90deg);
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
+	/* IE */
+	-ms-transform: rotate(-90deg);
+	/* Opera */
+	-o-transform: rotate(-90deg);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	margin:0;
+}
+#pillbox{
+	width:575px;
+	height:325px;
+	margin:10px 0 0 0;
+	display:inline;
+	float:left;
+}
+.day_col{
+	width:180px;
+	height:325px;
+	margin:0 7px 0 0;
+	display:inline;
+	float:left;
+}
+.day_of_week{
+	width:180px;
+	height:25px;
+	color:#2e75b6;
+	font-size:25px;
+	line-height:20px;
+	font-family:swiss_light;
+	text-align:center;
+	margin:0 0 0 0;
+}
+.pill_area_am{
+	width:180px;
+	height:140px;
+	margin:0 0 0 0;
+	padding-top:5px;
+	background:#eaeaea;
+}
+.pill_area_pm{
+	width:180px;
+	height:140px;
+	margin:7px 0 0 0;
+	padding-top:5px;
+	background:#eaeaea;
+}
+.am_row0,.am_row1,.am_row2,.am_row3,.pm_row0,.pm_row1,.pm_row2,.pm_row3{
+	width:180px;
+	height:30px;
+	margin:0 0 5px 0;
+}
+
+.dbyam_row0,.dbyam_row1,.dbyam_row2,.dbyam_row3,.dbypm_row0,.dbypm_row1,.dbypm_row2,.dbypm_row3{
+	width:180px;
+	height:30px;
+	margin:0 0 5px 0;
+}
+	
+.yam_row0,.yam_row1,.yam_row2,.yam_row3,.ypm_row0,.ypm_row1,.ypm_row2,.ypm_row3{
+	width:180px;
+	height:30px;
+	margin:0 0 5px 0;
+}
+
+.dose_row1{
+	width:180px;
+	height:30px;
+	margin:0 0 5px 0;
+}
+.dose_row2{
+	width:180px;
+	height:30px;
+	margin:0 0 5px 0;
+}
+.dose_row3{
+	width:180px;
+	height:30px;
+	margin:0 0 5px 0;
+}
+.dose_row4{
+	width:180px;
+	height:30px;
+	margin:0 0 0 0;
+}
+.dose{
+	width:30px;
+	height:30px;
+	margin:0 0 0 5px;
+	display:inline;
+	float:left;
+	background:pink;
+}
+#key_divider{
+	width:1px;
+	height:340px;
+	margin:5px 15px 0 0;
+	background:grey;
+	display:inline;
+	float:left;
+}
+#med_key{
+	width:440px;
+	height:360px;
+	margin:5px 0 0 0;
+	display:inline;
+	float:left;
+}
+#med_key h1{
+	color:#70AD47;
+	font-size:33px;
+	line-height:30px;
+	font-family:swiss_light;
+	margin:5px 0 15px 0;
+}
+#med_key h2{
+	color:#2e75b6;
+	font-size:25px; 
+	line-height:22px;
+	font-family:swiss_light;
+	margin:0 0 0 0;
+	display:inline;
+	float:left;
+}
+#med_key h3{
+	color:#2e75b6;
+	width:100px;
+	font-size:16px; 
+	line-height:25px;
+	font-family:swiss_light;
+	margin:2px 0 0 5px;
+	display:inline;
+	float:left;
+}
+#med_key p{
+	min-width:300px;
+	color:grey;
+	font-size:16px;
+	font-family:swiss_light;
+	float:left;
+	margin:0 0 0 0;
+}
+#med_key span{
+	font-family:swiss_bold;
+}
+.med_detail_row{
+	width:430px;
+	height:75px;
+	margin:0 0 7px 10px;
+}
+.med_icon{
+	width:75px;
+	height:75px;
+	display:inline;
+	float:left;
+	margin:0 5px 0 0;
+	background:orange;
+}
+#med1{
+	background:#7030a0;
+}
+#med2{
+	background:#5b9bd5;
+}
+#med3{
+	background:#00b050;
+}
+
+#med1_taken{
+	background:#7030a0;
+}
+#med2_taken{
+	background:#5b9bd5;
+}
+#med3_taken{
+	background:#00b050;
+}
+#med1_not{
+	background:#7030a0;
+	opacity:0.4;
+}
+#med2_not{
+	background:#5b9bd5;
+	opacity:0.4;
+}
+#med3_not{
+	background:#00b050;
+	opacity:0.4;
+}
+#med1_not:hover{
+	opacity:1.0;
+}
+#med2_not:hover{
+	opacity:1.0;
+}
+#med3_not:hover{
+	opacity:1.0;
+}
+
+
+
+/*CHECK BOX  FIX ME!
+*/
+input[type=checkbox] {
+	visibility: hidden;
+}
+
+.am_row0, .am_row1, .am_row2, .am_row3,.yam_row0, .yam_row1, .yam_row2, .yam_row3, .dbyam_row0, .dbyam_row1, .dbyam_row2, .dbyam_row3{
+	width:180px;
+	height:30px;
+	margin:0 0 5px 2px;
+}
+
+.pm_row0, .pm_row1, .pm_row2, .pm_row3, .ypm_row0, .ypm_row1, .ypm_row2, .ypm_row3, .dbypm_row0, .dbypm_row1, .dbypm_row2, .dbypm_row3{
+	width:180px;
+	height:30px;
+	margin:0 0 5px 2px;
+}
+
+
+/* ROW ONE */
+.am_row0 .am, .pm_row0 .pm, .yam_row0 .am,.ypm_row0 .pm,.dbyam_row0 .am,.dbypm_row0 .pm {
+	display:inline;
+	float:left;
+	width: 30px;
+	height: 30px;
+	background: rgb(112, 48, 160);
+
+	margin: 0px 2px 2px 3px;
+
+	position: relative;
+}
+
+.am_row0 .am label , .pm_row0 .pm label , .yam_row0 .am label ,.ypm_row0 .pm label ,.dbyam_row0 .am label,.dbypm_row0 .pm  label {
+	cursor: pointer;
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	left: 4px;
+	top: 4px;
+
+	background:white;
+	}
+
+.am_row0 .am label:after, .pm_row0 .pm label:after, .yam_row0 .am label:after,.ypm_row0 .pm label:after,.dbyam_row0 .am label:after,.dbypm_row0 .pm  label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	background: rgb(112, 48, 160);
+
+
+}
+
+.am_row0 .am label:hover::after, .pm_row0 .pm label:hover::after, .yam_row0 .am label:hover::after,.ypm_row0 .pm label:hover::after,.dbyam_row0 .am label:hover::after,.dbypm_row0 .pm  label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.8;
+}
+
+.am_row0 .am input[type=checkbox]:checked + label:after, .pm_row0 .pm input[type=checkbox]:checked + label:after, .yam_row0 .am input[type=checkbox]:checked + label:after,.ypm_row0 .pm input[type=checkbox]:checked + label:after,.dbyam_row0 .am input[type=checkbox]:checked + label:after,.dbypm_row0 .pm  input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+	background:rgb(112, 48, 160);
+}
+
+/* ROW TWO */
+.am_row1 .am, .pm_row1 .pm, .yam_row1 .am,.ypm_row1 .pm,.dbyam_row1 .am,.dbypm_row1 .pm {
+	display:inline;
+	float:left;
+	width: 30px;
+	height: 30px;
+	background: rgb(91, 155, 213);
+	margin: 0px 2px 2px 3px;
+	position: relative;
+}
+
+.am_row1 .am label , .pm_row1 .pm label , .yam_row1 .am label ,.ypm_row1 .pm label ,.dbyam_row1 .am label,.dbypm_row1 .pm  label {
+	cursor: pointer;
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	left: 4px;
+	top: 4px;
+	background:white;
+	}
+
+.am_row1 .am label:after, .pm_row1 .pm label:after, .yam_row1 .am label:after,.ypm_row1 .pm label:after,.dbyam_row1 .am label:after,.dbypm_row1 .pm  label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	background: rgb(91, 155, 213);
+
+
+}
+
+.am_row1 .am label:hover::after, .pm_row1 .pm label:hover::after, .yam_row1 .am label:hover::after,.ypm_row1 .pm label:hover::after,.dbyam_row1 .am label:hover::after,.dbypm_row1 .pm  label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.8;
+}
+
+.am_row1 .am input[type=checkbox]:checked + label:after, .pm_row1 .pm input[type=checkbox]:checked + label:after, .yam_row1 .am input[type=checkbox]:checked + label:after,.ypm_row1 .pm input[type=checkbox]:checked + label:after,.dbyam_row1 .am input[type=checkbox]:checked + label:after,.dbypm_row1 .pm  input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+	background:rgb(91, 155, 213);
+}
+
+/* ROW THREE */
+.am_row2 .am, .pm_row2 .pm, .yam_row2 .am,.ypm_row2 .pm,.dbyam_row2 .am,.dbypm_row2 .pm {
+	display:inline;
+	float:left;
+	width: 30px;
+	height: 30px;
+	background: rgb(0, 176, 80);
+	margin: 0px 2px 2px 3px;
+	position: relative;
+}
+
+.am_row2 .am label , .pm_row2 .pm label , .yam_row2 .am label ,.ypm_row2 .pm label ,.dbyam_row2 .am label,.dbypm_row2 .pm  label {
+	cursor: pointer;
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	left: 4px;
+	top: 4px;
+	background:white;
+	}
+
+.am_row2 .am label:after, .pm_row2 .pm label:after, .yam_row2 .am label:after,.ypm_row2 .pm label:after,.dbyam_row2 .am label:after,.dbypm_row2 .pm  label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	background: rgb(0, 176, 80);
+
+
+}
+
+.am_row2 .am label:hover::after, .pm_row2 .pm label:hover::after, .yam_row2 .am label:hover::after,.ypm_row2 .pm label:hover::after,.dbyam_row2 .am label:hover::after,.dbypm_row2 .pm  label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.8;
+}
+
+.am_row2 .am input[type=checkbox]:checked + label:after, .pm_row2 .pm input[type=checkbox]:checked + label:after, .yam_row2 .am input[type=checkbox]:checked + label:after,.ypm_row2 .pm input[type=checkbox]:checked + label:after,.dbyam_row2 .am input[type=checkbox]:checked + label:after,.dbypm_row2 .pm  input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+	background:rgb(0, 176, 80);
 }

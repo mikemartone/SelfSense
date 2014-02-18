@@ -32,6 +32,9 @@ Route::group(array('before' => 'auth'), function()
 	
 	Route::get('sleep', 'SleepController@getIndex');
 	Route::post('sleep', 'SleepController@postSleepEntries');
+
+	Route::get('medication', 'MedController@getIndex');
+	Route::post('medication', 'MedController@postMedEntries');
 });
 
 // Event::listen('illuminate.query', function() {

@@ -14,9 +14,9 @@
 		<img src="http://www.selfsense.co/site_flat/logo_white04.png" class="banner_leaf">
 		<p class="banner_selfsense">SelfSense</p>
 		<ul class="nav_menu" style="margin-right:0px;" >
-			<li><a href="">home</a></li>
+			<li><a href="login">home</a></li>
 			<li><a href="">profile</a></li>
-			<li><a href="">tool-kit</a></li>
+			<li><a href="mood">tool-kit</a></li>
 			<li><a href="">goals</a></li>
 			<li><a href="" style="border-right:none;">dashboard</a></li>
 		</ul> 

@@ -124,7 +124,7 @@
 			</div>
 			<div class="toolkit_icon_row">
 				<div class="home_tool_icon" id="meds">
-					<a href="v1_individual_meds_dev.php">
+					<a href="medication">
 					<img src="{{asset('assets/images/icon_meds.png')}}"></div>
 				<div class="home_tool_icon" id="treatments">
 					<a href="v1_individual_treatments_dev.php">

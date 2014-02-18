@@ -24,14 +24,14 @@ class SleepController extends BaseController {
 		if($entry_check)
 		{
 			$entry = Sleep::find($entry_check->id);
-			$entry->start = Input::get('start');
-			$entry->interruption0 = Input::get('interruption0');
-			$entry->interruption1 = Input::get('interruption1');
-			$entry->interruption2 = Input::get('interruption2');
-			$entry->note0 = Input::get('note0');
-			$entry->note1 = Input::get('note1');
-			$entry->note2 = Input::get('note2');
-			$entry->stop = Input::get('stop');
+			$entry->start = Input::get('start') != 0 ? Input::get('start') : null;
+			$entry->interruption0 = Input::get('interruption0') != 0 ? Input::get('interruption0') : null;
+			$entry->interruption1 = Input::get('interruption1') != 0 ? Input::get('interruption1') : null;
+			$entry->interruption2 = Input::get('interruption2') != 0 ? Input::get('interruption2') : null;
+			$entry->note0 = Input::get('note0') != 0 ? Input::get('note0') : null;
+			$entry->note1 = Input::get('note1') != 0 ? Input::get('note1') : null;
+			$entry->note2 = Input::get('note2') != 0 ? Input::get('note2') : null;
+			$entry->stop =  Input::get('stop') != 0 ? Input::get('stop') : null;
 			$entry->created_at = new DateTime;
 			$entry->updated_at = new DateTime;
 			$entry->user_id = Auth::user()->id;
@@ -41,20 +41,22 @@ class SleepController extends BaseController {
 		else
 		{
 			$sleep = new Sleep;
-			$sleep->start = Input::get('start');
-			$sleep->interruption0 = Input::get('interruption0');
-			$sleep->interruption1 = Input::get('interruption1');
-			$sleep->interruption2 = Input::get('interruption2');
-			$sleep->note0 = Input::get('note0');
-			$sleep->note1 = Input::get('note1');
-			$sleep->note2 = Input::get('note2');
-			$sleep->stop = Input::get('stop');
+			$sleep->start = Input::get('start') != 0 ? Input::get('start') : null;
+			$sleep->interruption0 = Input::get('interruption0') != 0 ? Input::get('interruption0') : null;
+			$sleep->interruption1 = Input::get('interruption1') != 0 ? Input::get('interruption1') : null;
+			$sleep->interruption2 = Input::get('interruption2') != 0 ? Input::get('interruption2') : null;
+			$sleep->note0 = Input::get('note0') != 0 ? Input::get('note0') : null;
+			$sleep->note1 = Input::get('note1') != 0 ? Input::get('note1') : null;
+			$sleep->note2 = Input::get('note2') != 0 ? Input::get('note2') : null;
+			$sleep->stop =  Input::get('stop') != 0 ? Input::get('stop') : null;
 			$sleep->created_at = new DateTime;
 			$sleep->updated_at = new DateTime;
 			$sleep->user_id = Auth::user()->id;
 			$sleep->save();
 
 		}
+
+		return Redirect::to('sleep');
 
 
 			// //determine x position for icon placement

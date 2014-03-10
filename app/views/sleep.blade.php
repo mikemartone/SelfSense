@@ -243,7 +243,7 @@ $('#dropHere').droppable(
 						{{ Form::submit('save', array('id' => 'button')); }}
 					</div>
 				{{ Form::close() }}
-
+				</div>
 		</div>
 
 
@@ -252,15 +252,15 @@ $('#dropHere').droppable(
 
 	<div id="tool_bar_container">
 	<div id="tool_bar">
-		<div class="unselected_tool" id="tracker1" style="margin-left:10px;"><a href="v1_individual_journal_dev.php"><img src="{{ asset('assets/images/icon_journal.png') }}"></a></div>
-		<div class="unselected_tool" id="tracker2"><a href="v1_individual_breathing_dev.php"><img src="{{ asset('assets/images/icon_breathing.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker1" style="margin-left:10px;"><a href="journal"><img src="{{ asset('assets/images/icon_journal.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker2"><a href="breathing"><img src="{{ asset('assets/images/icon_breathing.png') }}"></a></div>
 		<div class="unselected_tool" id="tracker3"><a href="mood"><img src="{{ asset('assets/images/icon_mood.png') }}"></a></div>
-		<div class="selected_tool" id="tracker4" style="opacity:1.0"><a href="v1_individual_sleep_dev.php"><img src="{{ asset('assets/images/icon_sleep.png') }}"></a></div>
-		<div class="unselected_tool" id="tracker5"><a href="v1_individual_meds_dev.php"><img src="{{ asset('assets/images/icon_meds.png') }}"></a></div>
-		<div class="unselected_tool" id="tracker6"><a href="v1_individual_treatments_dev.php"><img src="{{ asset('assets/images/icon_treatments.png') }}"></a></div>
-		<div class="unselected_tool" id="tracker7"><a href="v1_individual_relationships_dev.php"><img src="{{ asset('assets/images/icon_relationships.png') }}"></a></div>
-		<div class="unselected_tool" id="tracker8"><a href="v1_individual_diet_dev.php"><img src="{{ asset('assets/images/icon_diet.png') }}"></a></div>
-		<div class="unselected_tool" id="tracker9"><a href="v1_individual_settings_dev.php"><img src="{{ asset('assets/images/icon_settings.png') }}"></a></div>		
+		<div class="selected_tool" id="tracker4" style="opacity:1.0"><a href="sleep"><img src="{{ asset('assets/images/icon_sleep.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker5"><a href="medication"><img src="{{ asset('assets/images/icon_meds.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker6"><a href="treatmentplan"><img src="{{ asset('assets/images/icon_treatments.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker7"><a href="relationships"><img src="{{ asset('assets/images/icon_relationships.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker8"><a href="diet"><img src="{{ asset('assets/images/icon_diet.png') }}"></a></div>
+		<div class="unselected_tool" id="tracker9"><a href="settings"><img src="{{ asset('assets/images/icon_settings.png') }}"></a></div>		
 	</div>
 	</div>
 

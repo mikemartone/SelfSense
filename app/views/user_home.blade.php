@@ -110,11 +110,11 @@
 					<img src="{{asset('assets/images/icon_mood.png')}}">
 				</div>
 				<div class="home_tool_icon" id="journal">
-					<a href="v1_individual_journal_dev.php">
+					<a href="journal">
 					<img src="{{asset('assets/images/icon_journal.png')}}">
 				</div>
 				<div class="home_tool_icon" id="breathing">
-					<a href="v1_individual_breathing_dev.php">
+					<a href="breathing">
 					<img src="{{asset('assets/images/icon_breathing.png')}}">
 				</div>
 				<div class="home_tool_icon" id="sleep" style="margin-right:0px;">
@@ -127,14 +127,14 @@
 					<a href="medication">
 					<img src="{{asset('assets/images/icon_meds.png')}}"></div>
 				<div class="home_tool_icon" id="treatments">
-					<a href="v1_individual_treatments_dev.php">
+					<a href="treatmentplan">
 					<img src="{{asset('assets/images/icon_treatments.png')}}"></div>
 				<div class="home_tool_icon" id="relationships">
-					<a href="v1_individual_relationships_dev.php">
+					<a href="relationships">
 					<img src="{{asset('assets/images/icon_relationships.png')}}">
 				</div>
 				<div class="home_tool_icon" id="diet" style="margin-right:0px;">
-					<a href="v1_individual_diet_dev.php">
+					<a href="diet">
 					<img src="{{asset('assets/images/icon_diet.png')}}">
 				</div>
 			</div>

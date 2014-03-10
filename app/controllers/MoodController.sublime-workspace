@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"array_ke",
+				"array_key_exists"
+			],
+			[
+				"post",
+				"postDelete"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"cre",
+				"created_at"
+			],
+			[
+				"edit",
+				"edited_medication"
+			],
+			[
+				"pill",
+				"pill_area_am"
+			],
+			[
 				"pm",
 				"pm_times_taken"
 			],
@@ -19,9 +43,17 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 380.0,
+		"height": 173.0,
 		"selected_items":
 		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"packa",
 				"Package Control: Remove Package"
@@ -57,8 +89,22 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Mike1_000/Desktop/check.htm",
+		"/C/xampp/htdocs/laravel/laravel/public/assets/css/style_master.css",
+		"/C/xampp/htdocs/laravel/laravel/app/views/layouts/user_home.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/app/models/Medications.php",
+		"/C/xampp/htdocs/laravel/laravel/app/models/MedEntries.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/sleep.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/meds.blade.php",
 		"/C/xampp/htdocs/laravel/laravel/app/controllers/MedController.php",
+		"/C/xampp/htdocs/laravel/laravel/app/routes.php",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/BaseController.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/mood.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/public/assets/js/fancybox/demo/index.html",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/MoodController.php",
+		"/C/xampp/htdocs/www/selfsense_technology_dev.php",
+		"/C/xampp/htdocs/laravel/laravel/app/database/migrations/2014_02_18_114314_edit_meds_table.php",
+		"/C/xampp/htdocs/laravel/laravel/app/filters.php",
+		"/C/Users/Mike1_000/Desktop/check.htm",
 		"/C/Users/Mike1_000/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
 		"/C/Users/Mike1_000/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings"
 	],
@@ -78,6 +124,49 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dby_reg",
+			"put",
+			"entry_",
+			"$entry",
+			"$i",
+			"delet",
+			"ima",
+			"class=\"ed",
+			"get_ent",
+			"get_entry",
+			"user()",
+			"med_id",
+			"#modal_id",
+			"#modal_",
+			"test",
+			"medication",
+			"unselected_tool",
+			"html",
+			"dosage",
+			"						var prescribedby = $('#medidrow'+test+' #prescribedby').html();\n",
+			"wtf",
+			"med_ke",
+			"med_le",
+			"med_",
+			"med_deta",
+			"med_key",
+			"med_detail",
+			"med_de",
+			"med_detail",
+			".del",
+			"nth-",
+			"id=\"med",
+			"med3",
+			"divider",
+			"button",
+			"height",
+			"containe",
+			"yam",
+			"test",
+			"taken",
+			"class=\"am",
+			"yam",
+			"hi",
 			"$user_id"
 		],
 		"highlight": true,
@@ -172,12 +261,16 @@
 	},
 	"settings":
 	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 278.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

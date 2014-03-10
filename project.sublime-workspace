@@ -1,0 +1,487 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"array_ke",
+				"array_key_exists"
+			],
+			[
+				"post",
+				"postDelete"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"cre",
+				"created_at"
+			],
+			[
+				"edit",
+				"edited_medication"
+			],
+			[
+				"pill",
+				"pill_area_am"
+			],
+			[
+				"pm",
+				"pm_times_taken"
+			],
+			[
+				"am",
+				"am_times_taken"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/views/layouts/user_home.blade.php",
+			"settings":
+			{
+				"buffer_size": 1913,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/corp_master.blade.php",
+			"settings":
+			{
+				"buffer_size": 1460,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Windows/System32/drivers/etc/hosts",
+			"settings":
+			{
+				"buffer_size": 831,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 173.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			" import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/SettingsController.php",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/JournalController.php",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/MedController.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/relationships.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/sleep.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/public/assets/css/style_master.css",
+		"/C/xampp/htdocs/laravel/laravel/app/views/meds.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/journal.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/RelationshipsController.php",
+		"/C/xampp/htdocs/laravel/laravel/app/routes.php",
+		"/C/xampp/htdocs/laravel/laravel/public/assets/js/delete.js",
+		"/C/xampp/htdocs/laravel/laravel/app/views/settings.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/goals.blade.php",
+		"/C/Users/Mike1_000/AppData/Local/Temp/scp51715/var/www/v1_individual_goals_dev.php",
+		"/C/Users/Mike1_000/AppData/Local/Temp/scp52544/var/www/goals.css",
+		"/C/Users/Mike1_000/AppData/Local/Temp/scp45723/var/www/v1_individual_profile_dev.php",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/GoalsController.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/layouts/user_home.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/ProfileController.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/profile.blade.php",
+		"/C/Users/Mike1_000/AppData/Local/Temp/scp28059/var/www/v1_individual_diet_dev.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/user_home.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/treatmentplan.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/mood.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/breathing.blade.php",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/DietController.php",
+		"/C/xampp/htdocs/laravel/laravel/app/views/diet.blade.php",
+		"/C/Users/Mike1_000/AppData/Local/Temp/scp56962/var/www/v1_individual_treatments_dev.php",
+		"/C/Users/Mike1_000/AppData/Local/Temp/scp04915/var/www/treatments.css",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/TreatmentPlanController.php",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/BreathingController.php",
+		"/C/Users/Mike1_000/AppData/Local/Temp/scp50690/var/www/graphs/sleep.php",
+		"/C/Users/Mike1_000/AppData/Local/Temp/scp50302/var/www/graphs/stddev.php",
+		"/C/Users/Mike1_000/AppData/Local/Temp/scp49518/var/www/v1_dashboard_dev.php",
+		"/C/Users/Mike1_000/AppData/Roaming/Sublime Text 3/Packages/Xdebug Client/Xdebug.sublime-settings",
+		"/C/Users/Mike1_000/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Mike1_000/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Mike1_000/AppData/Roaming/Sublime Text 3/Packages/User/Xdebug.sublime-settings",
+		"/C/xampp/htdocs/laravel/laravel/app/models/MedEntries.php",
+		"/C/xampp/htdocs/laravel/laravel/project.sublime-project",
+		"/C/xampp/htdocs/laravel/laravel/project",
+		"/C/xampp/htdocs/laravel/laravel/app/models/Medications.php",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/BaseController.php",
+		"/C/xampp/htdocs/laravel/laravel/public/assets/js/fancybox/demo/index.html",
+		"/C/xampp/htdocs/laravel/laravel/app/controllers/MoodController.php",
+		"/C/xampp/htdocs/www/selfsense_technology_dev.php",
+		"/C/xampp/htdocs/laravel/laravel/app/database/migrations/2014_02_18_114314_edit_meds_table.php",
+		"/C/xampp/htdocs/laravel/laravel/app/filters.php",
+		"/C/Users/Mike1_000/Desktop/check.htm",
+		"/C/Users/Mike1_000/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Users/Mike1_000/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"button",
+			"edit",
+			"arial",
+			".add",
+			"add",
+			"#med_key",
+			".add",
+			"browse",
+			"dby_reg",
+			"put",
+			"entry_",
+			"$entry",
+			"$i",
+			"delet",
+			"ima",
+			"class=\"ed",
+			"get_ent",
+			"get_entry",
+			"user()",
+			"med_id",
+			"#modal_id",
+			"#modal_",
+			"test",
+			"medication",
+			"unselected_tool",
+			"html",
+			"dosage",
+			"						var prescribedby = $('#medidrow'+test+' #prescribedby').html();\n",
+			"wtf",
+			"med_ke",
+			"med_le",
+			"med_",
+			"med_deta",
+			"med_key",
+			"med_detail",
+			"med_de",
+			"med_detail",
+			".del",
+			"nth-",
+			"id=\"med",
+			"med3",
+			"divider",
+			"button",
+			"height",
+			"containe",
+			"yam",
+			"test",
+			"taken",
+			"class=\"am",
+			"yam",
+			"hi",
+			"$user_id"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/views/layouts/user_home.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1913,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1667,
+								1667
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/layouts/corp_master.blade.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1213,
+								1213
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Windows/System32/drivers/etc/hosts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 15.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.0378214826021,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\xampp\\htdocs\\laravel\\laravel\\app\\controllers\\MedController.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"35":
+				{
+					"group": 0,
+					"index": 0
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					],
+					[
+						1,
+						0,
+						2,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					0.623298033283,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 278.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -27,7 +27,7 @@ class Medications extends Eloquent {
 	{
 		$user_id = User::find(Auth::user()->id);	
 		$med_id = Medications::where('user_id', $user_id->id)->first()->id;
-		return Medications::where('user_id', $user_id->id)->get(array('id','am_regimen', 'pm_regimen'));
+		return Medications::where('user_id', $user_id->id)->whereValidUntil(null)->get();
 	}
 
 

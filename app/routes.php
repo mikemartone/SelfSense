@@ -34,7 +34,22 @@ Route::group(array('before' => 'auth'), function()
 	Route::post('sleep', 'SleepController@postSleepEntries');
 
 	Route::get('medication', 'MedController@getIndex');
-	Route::post('medication', 'MedController@postMedEntries');
+	Route::post('medication/entries', 'MedController@postMedEntries');
+	Route::post('medication/edit', 'MedController@postMedEdit');
+	Route::put('medication', 'MedController@putMedEdit');
+	Route::post('medication/delete/{id}', array(
+		'as' => 'medication.delete',
+		'uses' => 'MedController@postDelete'
+		));
+
+	Route::get('breathing', 'BreathingController@getIndex');
+	Route::get('treatmentplan', 'TreatmentPlanController@getIndex');
+	Route::get('diet', 'DietController@getIndex');
+	Route::get('settings', 'SettingsController@getIndex');
+	Route::get('profile', 'ProfileController@getIndex');
+	Route::get('goals', 'GoalsController@getIndex');
+	Route::get('journal', 'JournalController@getIndex');
+	Route::get('relationships','RelationshipsController@getIndex');
 });
 
 // Event::listen('illuminate.query', function() {

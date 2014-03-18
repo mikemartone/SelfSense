@@ -7,8 +7,8 @@
 	<link href="" rel="stylesheet" type="text/css" />
 	<link href="" rel="stylesheet" type="text/css" />
 	<link rel="shortcut icon" href="assets/images/icon.ico"> 
-	{{HTML::style('assets/css/style_master.css')}}
-	<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+	{{  HTML::style('assets/css/style_master.css')  }}
+	{{ HTML::script('assets/js/jquery-1.11.0.min.js') }}
 </head>
 
 <body>

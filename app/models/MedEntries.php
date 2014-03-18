@@ -41,6 +41,27 @@ class MedEntries extends Eloquent {
 		return MedEntries::whereBetween('created_at', array(date('Y-m-d 00:00:00', strtotime('-'. $date .' days')), date('Y-m-d 23:59:59', strtotime('-'. $date .' days')) ))->get();
 	}
 
+	public static function calculateMeds($from = null, $to = null)
+	{
+
+		//Set default to past week
+		if(is_null($from))
+		{
+			$from = date('Y-m-d 00:00:00', strtotime('-'. 7 .' days'));
+		}
+
+		if(is_null($to))
+		{
+			$to = date('Y-m-d 23:59:59', strtotime('-'. 0 .' days'));
+		}
+
+
+
+		return MedEntries::entry();
+
+
+	}
+
 
 
 	

@@ -1,8 +1,7 @@
 @extends('layouts.user_home')
 
 @section('content')
-
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+{{ HTML::script('assets/js/jquery-ui-1.10.4/ui/jquery-ui.js') }}
 <script>
 	   
 $(function() {	
@@ -115,11 +114,12 @@ $(function() {
             //overwrite original position
 			for(var count=0; count < draggables.length; count++){
 				if(draggables[count][0] == $(this).attr("id")){
-				var default_left = default_values[count][1];	
+				var default_y = default_values[count][1];	
 				}
 			}
+
             $(this).data("uiDraggable").originalPosition = {
-                top: default_left,
+                top: default_y,
                 left: 25				
             };
             //return boolean

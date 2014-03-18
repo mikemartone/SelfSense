@@ -49,7 +49,12 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('profile', 'ProfileController@getIndex');
 	Route::get('goals', 'GoalsController@getIndex');
 	Route::get('journal', 'JournalController@getIndex');
+
 	Route::get('relationships','RelationshipsController@getIndex');
+	Route::post('relationships', 'RelationshipsController@postRelationshipsEntries');
+
+	Route::get('dashboard', 'DashboardController@getIndex');
+
 });
 
 // Event::listen('illuminate.query', function() {

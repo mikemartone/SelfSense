@@ -6,7 +6,7 @@
 	{{HTML::style('assets/css/style_master.css')}}
 	{{HTML::style('assets/js/fancybox/source/jquery.fancybox.css')}}
 	<link rel="shortcut icon" href="{{asset('assets/images/icon.ico')}}"> 
-	<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+	{{ HTML::script('assets/js/jquery-1.11.0.min.js') }}
 </head>
 <body>
 
@@ -19,7 +19,7 @@
 			<li><a href="profile">profile</a></li>
 			<li><a href="mood">tool-kit</a></li>
 			<li><a href="goals">goals</a></li>
-			<li><a href="http://beta.selfsense.co/v1_dashboard_dev.php" style="border-right:none;">dashboard</a></li>
+			<li><a href="dashboard" style="border-right:none;">dashboard</a></li>
 		</ul> 
 	</div>
 	<div class="banner"></div>

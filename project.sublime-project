@@ -6,9 +6,11 @@
 			"path": "."
 		}
 	],
-	"settings": {
-		"xdebug": {
-			"url": "laravel.dev",
+	"settings":
+	{
+		"xdebug":
+		{
+			"url": "laravel.dev"
 		}
 	}
 }

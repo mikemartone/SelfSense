@@ -18,6 +18,10 @@
 
 Route::get('/', 'HomeController@getIndex');
 Route::post('login', 'HomeController@postLogin');
+Route::get('logout', 'HomeController@getLogout');
+
+Route::get('registration', 'RegistrationController@getIndex');
+Route::post('registration', 'RegistrationController@postRegistration');
 
 Route::group(array('before' => 'auth'), function()
 {
@@ -48,12 +52,17 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('settings', 'SettingsController@getIndex');
 	Route::get('profile', 'ProfileController@getIndex');
 	Route::get('goals', 'GoalsController@getIndex');
+
 	Route::get('journal', 'JournalController@getIndex');
+	Route::post('journal', 'JournalController@postJournalEntry');
+	Route::get('entries', 'JournalController@getEntries');
 
 	Route::get('relationships','RelationshipsController@getIndex');
 	Route::post('relationships', 'RelationshipsController@postRelationshipsEntries');
 
 	Route::get('dashboard', 'DashboardController@getIndex');
+	Route::post('dashboard', 'DashboardController@postDateRange');
+
 
 });
 

@@ -1,22 +1,14 @@
 <?php
 
 
-class Mood extends Eloquent {
+class JournalEntry extends Eloquent {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'moods';
-
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = array('password');
-
+	protected $table = 'journal_entries';
 
 	/**
 	 * Return todays entries

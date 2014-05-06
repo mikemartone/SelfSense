@@ -56,7 +56,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	*/
 	public function moods()
 	{
-		return $this->hasMany('Mood')->where('created_at', '>=', new DateTime('yesterday'));
+		return $this->hasMany('Mood')->where('created_at', '>=', new DateTime('today'));
 	}
 
 		/**
@@ -67,6 +67,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function sleepEntries()
 	{
 		return $this->hasMany('Sleep')->where('created_at', '>=', new DateTime('yesterday'));
+
+	}
+	/**
+	 * Return journal entries
+	 *
+	 * @return array
+	 */
+	public function journalEntries()
+	{
+		return $this->hasMany('JournalEntry');
 
 	}
 

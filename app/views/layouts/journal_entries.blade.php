@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" href="{{asset('assets/images/icon.ico')}}"> 
 	{{ HTML::script('assets/js/jquery-1.11.0.min.js') }}
 </head>
-<body>
+<body id="journal_entries">
 
 <!-- banner ---------------------------------------------------------------------------------------------------------->
 	<div class="banner_content">
@@ -30,7 +30,7 @@
 		<div class="header-profile">
 			<div class="profile_pic"><img src="{{ asset('assets/images/profile_pic_smiley.png') }}"></div>
 			<div class="profile_info">
-				<p>{{{  Auth::user()->username  }}}</p>
+				<p>jsmiles123</p>
 				<div class="profile_links"><a href="profile">my profile</a>  <a href="logout">logout</a></div>
 			</div>
 		</div>

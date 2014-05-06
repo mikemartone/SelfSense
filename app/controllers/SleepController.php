@@ -4,13 +4,10 @@ class SleepController extends BaseController {
 
 	public function getIndex()
 	{
-		$user_id = User::find(Auth::user()->id);		
-		//$json = $user_id->sleepEntries->toJson();
-		//echo $user_id->sleepEntries->stop;
-		$entries = Sleep::where('user_id', $user_id->id)->where('created_at', '>=', date('Y-m-d'))->get(array('start', 'interruption0', 'interruption1', 'interruption2', 'note0', 'note1', 'note2', 'stop'));
-		//$entries = Response::json($query);
+		$user_id = User::find(Auth::user()->id);	
+		//$entries = Sleep::where('user_id', $user_id->id)->where('created_at', '>=', date('Y-m-d'))->get(array('start', 'interruption0', 'interruption1', 'interruption2', 'note0', 'note1', 'note2', 'stop'));
 		$data = array(
-						'entries' => $entries, 
+						'entries' => $user_id->sleepEntries, 
 						'pageTitle' => 'sleep'
 					 );
 		return View::make('sleep', $data);

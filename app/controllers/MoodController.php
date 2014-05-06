@@ -13,6 +13,7 @@ class MoodController extends BaseController {
 		$roundedNow = $hour. ':' .$minute;
 
 		$user_id = User::find(Auth::user()->id);
+		// print_r($user_id->moods);
 
 		$data = array(
 						'entries' => $user_id->moods,

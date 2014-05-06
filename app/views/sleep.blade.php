@@ -99,7 +99,7 @@ $(function() {
 			stop: function(event,ui){
 				var finalOffset = $(this).position();
 				var finalxPos = finalOffset.left;
-				var finalyPos = finalOffset.top;	
+				var finalyPos = finalOffset.top;
 				if(finalxPos == 25)
 				{
 					$('input[name=' +this.id+']').val(0);
@@ -131,10 +131,10 @@ $(function() {
 };
 
 
-$('#dropHere').droppable(
+$('#sleep_dropHere').droppable(
 {
 	accept: '#start, #stop, #interruption0, #interruption1, #interruption2, #note0, #note1, #note2',
-	tolerance:"touch",
+	tolerance:"fit",
 	over:  function(event, ui){
 
 		var id = ui.draggable.attr('id');
@@ -239,7 +239,7 @@ $('#dropHere').droppable(
 
 			</div>
 					<div id='wrapper'>
-						<div id="dropHere"></div>
+						<div id="sleep_dropHere"></div>
 						{{ Form::submit('save', array('id' => 'button')); }}
 					</div>
 				{{ Form::close() }}

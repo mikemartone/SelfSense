@@ -8,7 +8,7 @@
 	<div class="toolframe">
 	    <div class="subject"><p>subject:</p>
 			{{  Form::open(array('url' => 'journal', 'name' => 'journal_entry'))  }}	
-            {{  Form::text('subject',  'Journal Entry ' . date('F jS Y') )  }}
+            {{  Form::text('subject',  'Journal Entry')  }}
 		</div>
    	    <div class="body">
     		{{ Form::textarea('body', '', array('placeholder' => 'Click here to start typing')) }}

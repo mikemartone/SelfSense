@@ -6,14 +6,16 @@
 
 <script>
 	$(function() {
-		var default_values=[['coworkers',10],['friends',190],['family',70],['extended_family',130],['providers',250]];
-	  	var entries = <?php echo $relationships?>;
+		var default_values=[['coworkers',10],['family',70],['extended_family',130],['friends',190],['providers',250]];
+	  	var relationships = <?php echo $relationships;?>;
+	  	var entries = <?php echo json_encode($entries) ?>;
 	  	var draggables = {};
 
 
 
+
 		for (var i=0;i<5;i++){
-			$('#' + entries[i].name).draggable(
+			$('#' + relationships[i].name).draggable(
 
 			{
 
@@ -26,7 +28,7 @@
 				},
 
 				create: function(event, ui){
-					if(typeof entries[i].relationships_entries[0] === 'undefined')
+					if(typeof entries[i] === 'undefined')
 					{
 						$(this).css("top", default_values[i][1] +"px");			
 					}
@@ -34,11 +36,10 @@
 					else
 					{
 						//if entry is set, make it 75px by 75px
-						if(entries[i].relationships_entries[0].closeness != null)
+						if(entries[i].closeness != null)
 						{
-
-							$(this).css("left",entries[i].relationships_entries[0].closeness+"px"); 
-							$(this).css("top",entries[i].relationships_entries[0].frequency+"px"); 
+							$(this).css("left",entries[i].closeness+"px"); 
+							$(this).css("top",entries[i].frequency+"px"); 
 							$(this).css("height","75px");
 							$(this).css("width","75px");
 						}
@@ -72,7 +73,6 @@
 					var finalOffset = $(this).position();
 					var finalxPos = finalOffset.left;
 					var finalyPos = finalOffset.top;
-
 					//if finalxPos is 25, it isn't on the chart, set val to 0
 					if(finalxPos == 25)
 					{

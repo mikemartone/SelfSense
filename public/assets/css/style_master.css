@@ -1237,9 +1237,9 @@ button:hover{
 #dropHere {
     vertical-align:middle;
 	margin-top:30px;
-	margin-left:70px;
-    width:765px;
-    height:75px;
+	margin-left:120px;
+    width:830px;
+    height:285px;
 
 }
 
@@ -2216,13 +2216,238 @@ iframe{
 
 }
 
-#dropHere {
+#sleep_dropHere {
 	margin-top:15px;
     vertical-align:middle;
-	margin-left:120px;
-    width:827px;
-    height:285px;
+    width:900px;
+    height:225px;
 
 }
 
 
+
+
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////*/
+/* dashboard-------------------------------------------------------------------------------*/
+/*/////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+#dashframe{
+	width:1200px;
+	margin:20px auto 0 auto;
+}
+#wheel_col{
+	width:250px;
+	height:265px;
+	margin-top:50px;
+	padding-right: 100px;
+	margin-bottom: 200px;
+	display:inline;
+	float:left;
+}
+#dates{
+	height:40px;
+}
+#control{
+	height:20px;
+	width:260px;
+	color:#2e75b6;
+	margin: 14px 0 0 -350px;
+	text-align: center;
+	display:inline;
+	float:left;
+}
+.date_label{
+	font-family:swiss_light;
+	font-size:20px;
+	line-height:20px;
+	margin:0 5px 0 5px;
+	display:inline;
+	float:left;
+}
+.date_input{
+	color:grey;
+	width:75px;
+	margin:1px 0 0 0;
+	text-align:center;
+	display:inline;
+	float:left;
+	border:1px solid grey;
+}
+#date_submit{
+	height:20px;
+	width:25px;
+	font-size:12px;
+	color:#ffffff;
+	border:1px solid #ffffff;
+	background:green;
+	margin:0 0 0 5px;
+}
+#date_submit:hover{
+	background:grey;
+	border:1px solid grey;
+}
+#wheel_area{
+	width:250px;
+	height:280px;
+	margin:0 0 0 0;
+	display:inline;
+	float:left;
+}
+#wheel_col p{
+	font-size:30px;
+	font-family:swiss_light;
+	color:#2e75b6;
+	line-height:30px;
+	margin:0;
+}
+#wheel_area img{
+	width:250px;
+	margin:0;
+}
+#key_scores{
+	width:250px;
+	height:125px;
+	display:inline;
+	float:left;
+	margin:5px 0 0 0;
+}
+.key_score_box{
+	width:75px;
+	height:75px;
+	display:inline;
+	float:left;
+	margin:7px 5px 0 0;
+}
+.score_name{
+	color:#ffffff;
+	font-size:20px;
+	line-height:20px;
+	font-family:swiss_light;
+	text-align:center;
+	margin:3px 0 0 0px;
+}
+.score{
+	color:#ffffff;
+	font-size:45px;
+	line-height:35px;
+	margin:10px 0 0 0;
+	font-family:swiss_light;
+	text-align:center;
+}
+#mood_score{
+	background:#7030a0;
+}
+#sleep_score{
+	background:#5b9bd5;
+}
+#med_score{
+	background:#548235;
+}
+#tools{
+	float: right;
+	width:250px;
+	height:55px;
+}
+
+#tools img{
+	width:30px;
+	height:30px;
+	margin:0;
+}
+.dash_tool{
+	width:40px;
+	height:40px;
+	margin:0 5px 0 0;
+	display:inline;
+	float:left;
+}
+#graph_col{
+	width:850px;
+	height:365px;
+	margin:0 0 0 0;
+	display:inline;
+	float:left;
+}
+.graph_row{
+	width:100%;
+	height:400px;
+	margin:0 0 0 0;
+	display:inline;
+	float:left;
+}
+/*#trends_graph{
+	width:566px;
+	height:232.5px;
+	margin:0 0 0 0;
+	display:inline;
+	float:left;
+}*/
+#mood_graph{
+	width:700px;
+	height:400px;
+	margin:0 0 0 0;
+	display:inline;
+	float:left;
+}
+#meds_graph{
+	width:350px;
+	height:300px;
+	margin:0 0 0 0;
+	display:inline;
+	float:left;
+}
+#sleep_graph{
+	width:350px;
+	height:300px;
+	margin:0 0 0 0;
+	display:inline;
+	float:left;
+}
+#social_graph{
+	width:400px;
+	height:300px;
+	margin:0 0 0 0;
+	display:inline;
+	float:left;
+}
+
+
+
+
+#journal_entries{
+	background-color: #F9F9F9;
+}
+
+#journal_subject{
+	font-size:18px; font-family:arial;
+}
+
+#journal_date{
+	font-size:12px; font-family:arial;
+}
+
+#journal_body{
+	font-size:14px; font-family:arial;
+}
+
+.toolframe #registration {
+	width:435px;
+	font-family:swiss_light;
+	font-size:25px;
+	line-height:40px;
+	color:#2e75b6;
+	margin:0 15px 0 0;
+	display:inline;
+	float:left;
+}
+
+#reg_box {
+}
+
+.registration_fields {
+	margin:10px;
+}

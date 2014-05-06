@@ -3,6 +3,10 @@
 @section('content')
 <!-- page contents ------------------------------------------------------------------------------------------------------>
 	<div id="login_content">
+
+			@if(Session::has('message'))
+	            <p class="alert">{{ Session::get('message') }}</p>
+	        @endif
 		
 		<!-- box 1 -->
 		<div id="login-box1">

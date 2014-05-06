@@ -18,9 +18,9 @@ class Medications extends Eloquent {
 	protected $fillable = array('user_id', 'medication', 'dosage', 'prescribedby','am_regimen','pm_regimen');
 
 
-	public function user()
+	public function medEntries()
 	{
-		return $this->hasMany('MedEntries');
+		return $this->hasMany('MedEntries','med_id');
 	}
 
 	public static function getRegimen()

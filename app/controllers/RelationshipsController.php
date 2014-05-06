@@ -8,6 +8,7 @@ class RelationshipsController extends BaseController {
 		$relationships = Relationships::getRelationships();
 		$entries = RelationshipsEntries::getEntry();
 
+
 		$data = array('pageTitle' => 'relationships',
 					  'relationships' => $relationships,
 					  'entries' => $entries
@@ -17,14 +18,17 @@ class RelationshipsController extends BaseController {
 
 	public function postRelationshipsEntries()
 	{
+
 		$user_id = User::find(Auth::user()->id);
 		if(count(RelationshipsEntries::entriesExist()) != 0 ) 
 		{
 
-			//for each relationship- get corresponding entry
+
+
+			//get existing entries by id and update them
 			foreach(RelationshipsEntries::getEntry() as $rel_entry)
 			{
-				$entry = RelationshipsEntries::find($rel_entry->RelationshipsEntries[0]->id);
+				$entry = RelationshipsEntries::find($rel_entry->id);
 				$entry->closeness = Input::get($rel_entry->name) != 0 ? Input::get($rel_entry->name) : null;
 				$entry->frequency = Input::get($rel_entry->name) != 0 ? Input::get($rel_entry->name . 'y') : null;
 				$entry->updated_at = new DateTime;
@@ -32,8 +36,8 @@ class RelationshipsController extends BaseController {
 			}
 		}
 		else
-		{
-			foreach(RelationshipsEntries::getEntry() as $rel_entry)
+		{	//make new entries, using the relationships table
+			foreach(Relationships::getRelationships() as $rel_entry)
 			{
 				$entry = new RelationshipsEntries;
 				$entry->rel_id = $rel_entry->id;

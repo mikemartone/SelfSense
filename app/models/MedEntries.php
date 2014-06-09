@@ -41,16 +41,20 @@ class MedEntries extends Eloquent {
 		return MedEntries::whereBetween('created_at', array(date('Y-m-d 00:00:00', strtotime('-'. $date .' days')), date('Y-m-d 23:59:59', strtotime('-'. $date .' days')) ))->get();
 	}
 
-	public static function totalMeds($from, $to)
+	public static function totalMeds($from, $to, $id = null)
 	{
-		$user_id = User::find(Auth::user()->id);
+		if($id == null)
+		{
+			$id = User::find(Auth::user()->id);
+		}
+		
 
 		//join meds and medentries, find percentage of meds taken for last week by the day
 		return DB::table('med_entries')
 					->join('meds', 'med_entries.med_id', '=', 'meds.id' )
 					->select(DB::raw('med_entries.created_at as entries_created_at, Date(med_entries.created_at) as date, SUM(med_entries.am_times_taken + med_entries.pm_times_taken) / SUM(meds.am_regimen + meds.pm_regimen) as percentage'))
 					->whereBetween('med_entries.created_at', array($from, $to))
-					->where('user_id', $user_id->id)
+					->where('user_id', $id)
 					->groupBy(DB::raw('date'))
 					->get();
 

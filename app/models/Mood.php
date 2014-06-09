@@ -34,16 +34,20 @@ class Mood extends Eloquent {
 		return $this->belongsTo('User');
 	}
 
-	public static function totalMoods($mood, $from, $to)
+	public static function totalMoods($mood, $from, $to, $id = null)
 	{
-		$user_id = User::find(Auth::user()->id);
+
+		if($id == null)
+		{
+			$id = User::find(Auth::user()->id)->id;
+		}
+		
 
 		//Set default to past week
-		
 
 		return DB::table('moods')
 					->whereBetween('created_at', array($from, $to))
-					->where('user_id', $user_id->id)
+					->where('user_id', $id)
 					->where('mood_type', $mood)
 					->select(DB::raw('Date(created_at) as created_date, COUNT(*) as count, mood_type'))
 					->groupBy('mood_type','created_date')

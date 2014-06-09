@@ -47,9 +47,13 @@ class RelationshipsEntries extends Eloquent {
 		
 	}
 
-	public static function totalRelationships($from = null, $to = null)
+	public static function totalRelationships($from = null, $to = null, $id = null)
 	{
-		$user_id = User::find(Auth::user()->id);
+		if($id == null)
+		{
+			$id = User::find(Auth::user()->id)->id;
+		}
+		
 
 		//Set default to past week
 		if(is_null($from))
@@ -67,7 +71,7 @@ class RelationshipsEntries extends Eloquent {
 					->join('relationships', 'relationships_entries.rel_id', '=', 'relationships.id' )
 					->select(DB::raw('rel_id, relationships_entries.created_at as entries_created_at, Date(relationships_entries.created_at) as date, AVG(relationships_entries.frequency) as frequency, AVG(relationships_entries.closeness) as closeness'))
 					->whereBetween('relationships_entries.created_at', array($from, $to))
-					->where('user_id', $user_id->id)
+					->where('user_id', $id)
 					->groupBy('rel_id')
 					->get();
 

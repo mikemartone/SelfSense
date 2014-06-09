@@ -79,7 +79,6 @@
 		</div>
 		<div id="sleep_divider"></div>
 
-
 		<div id="chart" style="margin-left:50px; width:1000px; position:absolute;">
 		@foreach ($entries as $row)
 			<div class="mood_icon">

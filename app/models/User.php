@@ -39,6 +39,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->password;
 	}
 
+
 	/**
 	 * Get the e-mail address where password reminders are sent.
 	 *
@@ -79,5 +80,18 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('JournalEntry');
 
 	}
+
+	/**
+	 * Return care relationships
+	 *
+	 * @return array
+	 */
+	public function CareRelationships()
+	{
+		return $this->hasMany('CareRelationships', 'caretaker_id');
+
+	}
+
+
 
 }

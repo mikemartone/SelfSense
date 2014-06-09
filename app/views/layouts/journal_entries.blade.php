@@ -30,7 +30,7 @@
 		<div class="header-profile">
 			<div class="profile_pic"><img src="{{ asset('assets/images/profile_pic_smiley.png') }}"></div>
 			<div class="profile_info">
-				<p>jsmiles123</p>
+				<p>{{{  Auth::user()->username  }}}</p>
 				<div class="profile_links"><a href="profile">my profile</a>  <a href="logout">logout</a></div>
 			</div>
 		</div>

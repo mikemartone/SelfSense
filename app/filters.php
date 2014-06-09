@@ -78,3 +78,38 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Admin Role Filter
+|--------------------------------------------------------------------------
+|
+| The Admin Role filter is responsible for keeping Admin routes protected
+| from user routes.
+*/
+
+Route::filter('caretaker_role', function()
+{
+	if(Auth::user()->access_level !== 1)
+	{
+		return Redirect::to('/');
+	}
+});
+
+/*
+|--------------------------------------------------------------------------
+| User Role Filter
+|--------------------------------------------------------------------------
+|
+| The User Role filter is responsible for keeping User routes protected
+| from Admin routes.
+*/
+
+Route::filter('user_role', function()
+{
+	if(Auth::user()->access_level !== 0)
+	{
+		return Redirect::to('/');
+	}
+});

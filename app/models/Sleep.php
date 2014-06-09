@@ -24,14 +24,17 @@ class Sleep extends Eloquent {
 		return $this->belongsTo('User');
 	}
 
-	public static function totalSleep($from, $to)
+	public static function totalSleep($from, $to, $id = null)
 	{
-		$user_id = User::find(Auth::user()->id);
 
-		
+		if($id == null)
+		{
+			$id = User::find(Auth::user()->id)->id;
+		}
+
 		return DB::table('sleep_entries')
 					->whereBetween('created_at', array($from, $to))
-					->where('user_id', $user_id->id)
+					->where('user_id', $id)
 					->get(array('start','stop','created_at'));
 
 

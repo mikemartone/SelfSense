@@ -23,12 +23,23 @@ class Relationships extends Eloquent {
 		return $this->hasMany('RelationshipsEntries', 'rel_id');
 	}
 
-	public static function getRelationships()
+	public static function getRelationships($id = null)
 	{
-		$user_id = User::find(Auth::user()->id);	
-		$rel_id = Relationships::where('user_id', $user_id->id)->first()->id;
+
+		if($id == null)
+		{
+			$id = User::find(Auth::user()->id)->id;
+		}
+
+		if(isset(Relationships::where('user_id', $id)->first()->id))
+		{
+			$rel_id = Relationships::where('user_id', $id)->first()->id;
+			return Relationships::with('RelationshipsEntries')->get();
+		}
+
+		return false;
 		//return Relationships::where('user_id', $user_id->id)->whereValidUntil(null)->get();
-		return Relationships::with('RelationshipsEntries')->get();
+		
 	}
 
 

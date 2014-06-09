@@ -29,68 +29,29 @@ class MedController extends BaseController {
 			$regimen = Medications::getRegimen();
 			$entry_check = MedEntries::getEntry($day);
 
-			//retrieve results depending on day offset (0 = today, 1 = yesterday, 2 = day before yesterday)
-			if($day === 0)
-			{
-				$am = Input::get('am');
-				$pm = Input::get('pm');
-			}
-			elseif($day === 1)
-			{
-				$am = Input::get('yam');
-				$pm = Input::get('ypm');
-			}
-			else
-			{
-				$am = Input::get('dbyam');
-				$pm = Input::get('dbypm');
-			}
+			$day_array = array(
+							array('am','pm'),
+							array('yam', 'ypm'),
+							array('dbyam', 'dbypm')
+							);
+
+			//retrieve results depending on day offset
+
+			$am = Input::get($day_array[$day][0]);
+			$pm = Input::get($day_array[$day][1]);
+
 
 			//if no entries have been made today...
-			if(count(MedEntries::getEntry($day)) === 0)
+			if(!count(MedEntries::getEntry($day)))
 			{
 
 				//Count number of times a medication was checked
 				//If medication not checked, give it a value of zero, else give it the user-provided value
 				foreach($regimen as $value)
 				{	
-					//if some am values exist- count instances of med id to determine times taken, if not set, set to 0
-					if(isset($am))
-					{
-						if(!isset(array_count_values($am)[$value['id']]))
-						{
-							$am_times_taken = 0;
-						}
-						else
-						{
-							$am_times_taken = array_count_values($am)[$value['id']];
-						}
-					}
-
-					//if no am values exist, set am times taken to 0
-					else
-					{
-						$am_times_taken = 0;
-					}
+					$am_times_taken = Helpers::determineTimesTaken($am, $value);
 					
-					//if some pm values exist- count instances of med id to determine times taken, if not set, set to 0
-					if(isset($pm))
-					{
-						if(!isset(array_count_values($pm)[$value['id']]))
-						{
-							$pm_times_taken = 0;
-						}
-						else
-						{
-							$pm_times_taken = array_count_values($pm)[$value['id']];
-						}
-					}
-
-					//if no pm values exist, set pm times taken to 0
-					else
-					{
-						$pm_times_taken = 0;
-					}
+					$pm_times_taken = Helpers::determineTimesTaken($pm, $value);
 					
 					$entry = new MedEntries;
 					$entry->med_id = $value['id'];
@@ -109,43 +70,9 @@ class MedController extends BaseController {
 				foreach($regimen as $key => $value)
 				{	
 	
-					//if some am values exist- count instances of med id to determine times taken, if not set, set to 0
-					if(isset($am))
-					{
-						if(!isset(array_count_values($am)[$value['id']]))
-						{
-							$am_times_taken = 0;
-						}
-						else
-						{
-							$am_times_taken = array_count_values($am)[$value['id']];
-						}
-					}
-
-					//if no am values exist, set am times taken to 0
-					else
-					{
-						$am_times_taken = 0;
-					}
+					$am_times_taken = Helpers::determineTimesTaken($am, $value);
 					
-					//if some pm values exist- count instances of med id to determine times taken, if not set, set to 0
-					if(isset($pm))
-					{
-						if(!isset(array_count_values($pm)[$value['id']]))
-						{
-							$pm_times_taken = 0;
-						}
-						else
-						{
-							$pm_times_taken = array_count_values($pm)[$value['id']];
-						}
-					}
-
-					//if no pm values exist, set pm times taken to 0
-					else
-					{
-						$pm_times_taken = 0;
-					}
+					$pm_times_taken = Helpers::determineTimesTaken($pm, $value);
 					
 
 					//If new entry was added after medications have been updated for the day, make new entry for the new med, otherwise update by id
@@ -181,6 +108,9 @@ class MedController extends BaseController {
 
 
 	}
+
+
+
 
 	public function putMedEdit()
 	{

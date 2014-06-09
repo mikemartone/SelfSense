@@ -54,7 +54,18 @@ class HomeController extends BaseController {
 
 	public function getLogin()
 	{
-		return View::make('user_home', array('pageTitle' => 'home'));
+		if(Auth::user()->access_level === 0)
+		{
+			return View::make('user_home', array('pageTitle' => 'home'));
+		}
+		elseif(Auth::user()->access_level === 1)
+		{
+			return Redirect::to('caretakerlogin');
+		}
+		else
+		{
+			return Redirect::to('/');
+		}
 		
 	}
 

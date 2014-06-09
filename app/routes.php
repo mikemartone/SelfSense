@@ -16,16 +16,29 @@
 // 	return View::make('landing');
 // });
 
+
+
 Route::get('/', 'HomeController@getIndex');
 Route::post('login', 'HomeController@postLogin');
 Route::get('logout', 'HomeController@getLogout');
 
 Route::get('registration', 'RegistrationController@getIndex');
 Route::post('registration', 'RegistrationController@postRegistration');
+Route::get('login', 'HomeController@getLogin');
 
-Route::group(array('before' => 'auth'), function()
+
+
+Route::group(array('before' => array('auth')), function()
 {
-	Route::get('login', 'HomeController@getLogin');
+	Route::post('dashboard', 'DashboardController@postDateRange');
+});
+
+
+
+//User Tier routes
+
+Route::group(array('before' => array('auth', 'user_role')), function()
+{
 
 	Route::get('mood', 'MoodController@getIndex');
 	Route::post('mood', 'MoodController@postMoodEntries');
@@ -66,10 +79,23 @@ Route::group(array('before' => 'auth'), function()
 
 });
 
+
+
+//Caretaker Tier Routes
+
+Route::group(array('before' => array('auth', 'caretaker_role')), function()
+{
+	Route::get('caretakerlogin', 'CaretakerController@getIndex');
+	Route::get('dashboard/{id}', 'DashboardController@getIndex');
+	Route::post('dashboard/{id}', 'DashboardController@postDateRange');
+});
+
+
+
+
 // Event::listen('illuminate.query', function() {
 //     print_r(func_get_args());
 // });
 
 
-//Route::resource('login', 'HomeController');
 

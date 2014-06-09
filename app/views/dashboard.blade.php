@@ -4,14 +4,7 @@
 <!-- page contents ------------------------------------------------------------------------------------------------------>
 	
 	<!-- page contents ------------------------------------------------------------------------------------------------------>	
-	
-<?php
-	for($i = 0; $i < count($mood_array); $i++ )
-	{
-		//echo $mood_array[$i];
-	}
 
- ?>
 	<script src="{{ asset('assets/js/toolbar.js') }}"></script>
 	<script src="{{ asset('assets/js/Highcharts-3.0.10/js/highcharts.js') }}"></script>
 	<script src="{{ asset('assets/js/Highcharts-3.0.10/js/highcharts-more.src.js') }}"></script>

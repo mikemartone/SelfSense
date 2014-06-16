@@ -42,8 +42,11 @@ class RelationshipsEntries extends Eloquent {
 	public static function entriesExist()
 	{
 		$user_id = User::find(Auth::user()->id);
-		return RelationshipsEntries::whereBetween('created_at', array(date('Y-m-d 00:00:00', strtotime('-'. 7 .' days')), 
-												   date('Y-m-d 23:59:59', strtotime('-'. 0 .' days')) ))->get();
+		return DB::table('relationships')
+					->join('relationships_entries', 'relationships.id', '=', 'relationships_entries.rel_id' )
+					->where('user_id', $user_id->id)
+					->whereBetween('relationships_entries.created_at', array(date('Y-m-d 00:00:00', strtotime('-'. 7 .' days')), date('Y-m-d 23:59:59', strtotime('-'. 0 .' days')) ))
+					->get();
 		
 	}
 

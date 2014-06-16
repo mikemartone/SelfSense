@@ -74,7 +74,7 @@ Route::group(array('before' => array('auth', 'user_role')), function()
 	Route::post('relationships', 'RelationshipsController@postRelationshipsEntries');
 
 	Route::get('dashboard', 'DashboardController@getIndex');
-	Route::post('dashboard', 'DashboardController@postDateRange');
+	Route::post('dashboard/{id?}', 'DashboardController@postDateRange');
 
 
 });
@@ -87,7 +87,7 @@ Route::group(array('before' => array('auth', 'caretaker_role')), function()
 {
 	Route::get('caretakerlogin', 'CaretakerController@getIndex');
 	Route::get('dashboard/{id}', 'DashboardController@getIndex');
-	Route::post('dashboard/{id}', 'DashboardController@postDateRange');
+	Route::post('dashboard/{id?}', 'DashboardController@postDateRange');
 });
 
 

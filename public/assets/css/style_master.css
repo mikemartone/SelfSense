@@ -1477,7 +1477,7 @@ text-align:center;
 }
 #med_key h3{
 	color:#2e75b6;
-	width:100px;
+	max-width:500px;
 	font-size:16px; 
 	line-height:25px;
 	font-family:swiss_light;
@@ -2464,6 +2464,11 @@ iframe{
 }
 
 .caseload {
+	color:black;
+	text-decoration: none;
+}
+
+#goback {
 	color:black;
 	text-decoration: none;
 }

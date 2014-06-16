@@ -91,9 +91,9 @@ Route::filter('csrf', function()
 
 Route::filter('caretaker_role', function()
 {
-	if(Auth::user()->access_level !== 1)
+	if(Auth::user()->access_level != '1')
 	{
-		return Redirect::to('/');
+		return Response::view('404');
 	}
 });
 
@@ -108,8 +108,8 @@ Route::filter('caretaker_role', function()
 
 Route::filter('user_role', function()
 {
-	if(Auth::user()->access_level !== 0)
+	if(Auth::user()->access_level != '0')
 	{
-		return Redirect::to('/');
+		return Response::view('404');
 	}
 });

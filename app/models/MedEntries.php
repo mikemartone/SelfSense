@@ -26,8 +26,18 @@ class MedEntries extends Eloquent {
 
 	public static function getEntry($date)
 	{
-		$user_id = User::find(Auth::user()->id);	
-		$med_id = Medications::where('user_id', $user_id->id)->first()->id;
+		$user_id = User::find(Auth::user()->id);
+
+		if(MedEntries::whereBetween('created_at', array(date('Y-m-d 00:00:00', strtotime('-'. $date .' days')), date('Y-m-d 23:59:59', strtotime('-'. $date .' days')) ))->get())
+		{
+			return MedEntries::whereBetween('created_at', array(date('Y-m-d 00:00:00', strtotime('-'. $date .' days')), date('Y-m-d 23:59:59', strtotime('-'. $date .' days')) ))->get();
+		}
+		else
+		{
+			return;
+		}
+
+
 		
 		//v v v Null filter if you need it
 		// $test = Medications::whereValidUntil(null)->get();
@@ -37,17 +47,14 @@ class MedEntries extends Eloquent {
 		// 	//whereBetween('created_at', array(date('Y-m-d 00:00:00', strtotime('-'. $date .' days')), date('Y-m-d 23:59:59', strtotime('-'. $date .' days')) ))->get(array('id','med_id', 'am_times_taken', 'pm_times_taken'))
 		// }
 		// var_dump($entries_array[0]);
-
-		return MedEntries::whereBetween('created_at', array(date('Y-m-d 00:00:00', strtotime('-'. $date .' days')), date('Y-m-d 23:59:59', strtotime('-'. $date .' days')) ))->get();
 	}
 
 	public static function totalMeds($from, $to, $id = null)
 	{
 		if($id == null)
 		{
-			$id = User::find(Auth::user()->id);
+			$id = User::find(Auth::user()->id)->id;
 		}
-		
 
 		//join meds and medentries, find percentage of meds taken for last week by the day
 		return DB::table('med_entries')

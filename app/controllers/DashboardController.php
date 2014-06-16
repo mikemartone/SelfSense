@@ -86,11 +86,7 @@ class DashboardController extends BaseController {
 
 	public function postDateRange($id = null)
 	{
-		if($id == null)
-		{
-			$id = User::find(Auth::user()->id);
-		}
-
+		
 		$from = Input::get('from');
 
 		//set $to to span entire selected day

@@ -26,8 +26,14 @@ class Medications extends Eloquent {
 	public static function getRegimen()
 	{
 		$user_id = User::find(Auth::user()->id);	
-		$med_id = Medications::where('user_id', $user_id->id)->first()->id;
-		return Medications::where('user_id', $user_id->id)->whereValidUntil(null)->get();
+		if(Medications::where('user_id', $user_id->id)->whereValidUntil(null)->get())
+		{
+			return Medications::where('user_id', $user_id->id)->whereValidUntil(null)->get();
+		}
+		else
+		{
+			return;
+		}
 	}
 
 

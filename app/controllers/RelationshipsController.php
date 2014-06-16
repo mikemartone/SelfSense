@@ -20,11 +20,8 @@ class RelationshipsController extends BaseController {
 	{
 
 		$user_id = User::find(Auth::user()->id);
-		if(count(RelationshipsEntries::entriesExist()) != 0 ) 
+		if(count(RelationshipsEntries::getEntry()) != 0 ) 
 		{
-
-
-
 			//get existing entries by id and update them
 			foreach(RelationshipsEntries::getEntry() as $rel_entry)
 			{
@@ -35,8 +32,12 @@ class RelationshipsController extends BaseController {
 				$entry->save();
 			}
 		}
+
 		else
-		{	//make new entries, using the relationships table
+		{	
+
+
+			//make new entries, using the relationships table
 			foreach(Relationships::getRelationships() as $rel_entry)
 			{
 				$entry = new RelationshipsEntries;
@@ -45,9 +46,11 @@ class RelationshipsController extends BaseController {
 				$entry->frequency = Input::get($rel_entry->name) != 0 ? Input::get($rel_entry->name . 'y') : null;
 				$entry->created_at = new DateTime;
 				$entry->updated_at = new DateTime;
+
 				$entry->save();
 			}
 		}
+
 		return Redirect::to('relationships');
 	}
 

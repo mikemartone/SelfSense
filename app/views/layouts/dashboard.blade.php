@@ -45,7 +45,7 @@
 				<div class="profile_links">
 					<a href="profile">my profile</a>  
 					
-					<a href="logout">logout</a>
+					<a href= "{{  URL::action('HomeController@getLogout')  }}" > logout  </a>
 				</div>
 			</div>
 		</div>

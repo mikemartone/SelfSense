@@ -11,8 +11,6 @@
 	<script src="{{ asset('assets/js/jquery-ui-1.10.4/ui/jquery-ui.js')  }}"></script>
 	{{  HTML::style('assets/js/jquery-ui-1.10.4/themes/base/jquery-ui.css')  }}
 
-
-
 <!-- page contents ---------------------------------------------------------------------------------------------------->	
 	
 	<div id="dashframe">
@@ -305,10 +303,10 @@ $(function () {
 
 		//series data formatting (datetime)
 		var series = [];
-		var test = <?php echo $mood_array ?>;
-		for(key in test)
+		var mood_array = <?php echo $mood_array ?>;
+		for(key in mood_array)
 		{
-			var mood_data = test[key];
+			var mood_data = mood_array[key];
 			series.push({
 				name: key,
 				data: mood_data

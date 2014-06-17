@@ -31,7 +31,7 @@
 			<div class="profile_pic"><img src="{{ asset('assets/images/profile_pic_smiley.png') }}"></div>
 			<div class="profile_info">
 				<p>{{{  Auth::user()->username  }}}</p>
-				<div class="profile_links"><a href="profile">my profile</a>  <a href="logout">logout</a></div>
+				<div class="profile_links"><a href="profile">my profile</a>   <a href= "{{  URL::action('HomeController@getLogout')  }}" > logout  </a></div>
 			</div>
 		</div>
 	</div>

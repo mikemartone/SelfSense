@@ -21,7 +21,7 @@ class RelationshipsEntries extends Eloquent {
 
 	public function relationships()
 	{
-		return $this->belongsTo('Relationships');
+		return $this->belongsTo('User');
 	}
 
 	public static function getEntry()

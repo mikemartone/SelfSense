@@ -3,19 +3,17 @@
 @section('content')
 
 {{ HTML::script('assets/js/jquery-ui-1.10.4/ui/jquery-ui.js') }}
-
 <script>
 	$(function() {
 		var default_values=[['coworkers',10],['family',70],['extended_family',130],['friends',190],['providers',250]];
-	  	var relationships = <?php echo $relationships;?>;
-	  	var entries = <?php echo json_encode($entries) ?>;
+	  	var entries = <?php echo $entries ?>;
 	  	var draggables = {};
 
 
 
 
 		for (var i=0;i<5;i++){
-			$('#' + relationships[i].name).draggable(
+			$('#' + default_values[i][0]).draggable(
 
 			{
 

@@ -5,12 +5,17 @@ class RelationshipsController extends BaseController {
 
 	public function getIndex()
 	{
-		$relationships = Relationships::getRelationships();
-		$entries = RelationshipsEntries::getEntry();
+		$user_id = User::find(Auth::user()->id);
+		$RelationshipsEntries = $user_id->relationshipsEntries;
+		foreach($RelationshipsEntries as $key => $item)
+		{
+			$RelationshipsEntries[$key]->rel_id = Relationships::find($item->rel_id)->name;
+		}
+		
+		$entries = $RelationshipsEntries;
 
 
 		$data = array('pageTitle' => 'relationships',
-					  'relationships' => $relationships,
 					  'entries' => $entries
 						);
 		return View::make('relationships', $data);
@@ -20,14 +25,22 @@ class RelationshipsController extends BaseController {
 	{
 
 		$user_id = User::find(Auth::user()->id);
-		if(count(RelationshipsEntries::getEntry()) != 0 ) 
+
+		
+
+		if(count($user_id->RelationshipsEntries) != 0 ) 
 		{
+
+
 			//get existing entries by id and update them
-			foreach(RelationshipsEntries::getEntry() as $rel_entry)
+			foreach($user_id->RelationshipsEntries as $rel_entry)
 			{
+				
+				$name = Relationships::find($rel_entry->rel_id)->name;
+				
 				$entry = RelationshipsEntries::find($rel_entry->id);
-				$entry->closeness = Input::get($rel_entry->name) != 0 ? Input::get($rel_entry->name) : null;
-				$entry->frequency = Input::get($rel_entry->name) != 0 ? Input::get($rel_entry->name . 'y') : null;
+				$entry->closeness = Input::get($name) != 0 ? Input::get($name) : null;
+				$entry->frequency = Input::get($name) != 0 ? Input::get($name . 'y') : null;
 				$entry->updated_at = new DateTime;
 				$entry->save();
 			}
@@ -36,14 +49,17 @@ class RelationshipsController extends BaseController {
 		else
 		{	
 
-
 			//make new entries, using the relationships table
-			foreach(Relationships::getRelationships() as $rel_entry)
+			foreach(Relationships::get() as $relationship)
 			{
+				echo 
+				$name = $relationship->name;
+
 				$entry = new RelationshipsEntries;
-				$entry->rel_id = $rel_entry->id;
-				$entry->closeness = Input::get($rel_entry->name) != 0 ? Input::get($rel_entry->name) : null;
-				$entry->frequency = Input::get($rel_entry->name) != 0 ? Input::get($rel_entry->name . 'y') : null;
+				$entry->user_id = User::find(Auth::user()->id)->id;
+				$entry->rel_id = $relationship->id;
+				$entry->closeness = Input::get($name) != 0 ? Input::get($name) : null;
+				$entry->frequency = Input::get($name) != 0 ? Input::get($name . 'y') : null;
 				$entry->created_at = new DateTime;
 				$entry->updated_at = new DateTime;
 

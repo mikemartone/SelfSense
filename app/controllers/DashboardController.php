@@ -48,8 +48,24 @@ class DashboardController extends BaseController {
 		
 		foreach($relationshipsdata as $row)
 		{
-			$relationships_frequency_array[] = (1 + $row->frequency) / 2.1;  // Convert pixel value to percentage number, for graphing purposes (1 added to avoid zero)
-			$relationships_closeness_array[] = 100 - (($row->closeness - 219) / 7.55);  // Convert pixel value to percentage number. (subtract from 100 to invert.  Subtract 219 to create 1 - 755 range)
+			if(isset($row->frequency)) 
+			{
+				$relationships_frequency_array[] = (1 + $row->frequency) / 2.1;  // Convert pixel value to percentage number, for graphing purposes (1 added to avoid zero)
+			}
+			else
+			{
+				$relationships_frequency_array[] = null;	
+			}
+			if(isset($row->closeness)) 
+			{
+				$relationships_closeness_array[] = 100 - (($row->closeness - 219) / 7.55);  // Convert pixel value to percentage number. (subtract from 100 to invert.  Subtract 219 to create 1 - 755 range)
+			}
+			else
+			{
+				$relationships_closeness_array[] = null;	
+			}
+
+
 		}
 
 		$moods = array('happy', 'sad', 'angry', 'disappointed', 'frustrated', 'pride', 'excited', 'scared', 'surprised', 'nervous');
@@ -63,8 +79,7 @@ class DashboardController extends BaseController {
 				$mood_series[$row] = array();
 				foreach($total_entries as $row)
 				{
-					$mood_series[$row->mood_type][] = array((strtotime($row->created_date) * 1000), $row->count);
-
+					$mood_series[$row->mood_type][] = array((strtotime($row->created_date) * 1000), (int) $row->count);
 				}
 			}
 		}

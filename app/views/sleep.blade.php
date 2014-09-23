@@ -4,39 +4,47 @@
 {{ HTML::script('assets/js/jquery-ui-1.10.4/ui/jquery-ui.js') }}
 <script>
 	   
-$(function() {	
-	var default_values = [['start',25],['interruption0',70],['interruption1',70],['interruption2',70],['note0',130],['note1',130],['note2',130],['stop',210]];
+	var default_values = {
+								'start' : 25,
+							  	'interruption0' : 70,
+							  	'interruption1' : 70,
+							  	'interruption2' : 70,
+							  	'note0' : 130,
+							  	'note1' : 130,
+							  	'note2' : 130,
+							  	'stop' : 210
+						 };
 	
 	var entries = <?php echo $entries?>;
 
 
 	//if an an entry exists, use values in database, else use default y position
-	 if(typeof entries[0] != 'undefined'){
-	var draggables = [
-							['start', entries[0].start],
-						  	['interruption0', entries[0].interruption0],
-						  	['interruption1', entries[0].interruption1],
-						  	['interruption2', entries[0].interruption2],
-						  	['note0', entries[0].note0],
-						  	['note1', entries[0].note1],
-						  	['note2', entries[0].note2],
-						  	['stop', entries[0].stop]
-					 ];
-	}
+	if(typeof entries[0] != 'undefined')
+	{
+		var draggables = {
+								'start' : entries[0].start,
+							  	'interruption0' : entries[0].interruption0,
+							  	'interruption1' : entries[0].interruption1,
+							  	'interruption2' : entries[0].interruption2,
+							  	'note0' : entries[0].note0,
+							  	'note1' : entries[0].note1,
+							  	'note2' : entries[0].note2,
+							  	'stop' : entries[0].stop
+						 };
+		}
 	else
 	{
-		var draggables = [['start',25],['interruption0',70],['interruption1',70],['interruption2',70],['note0',130],['note1',130],['note2',130],['stop',210]]
+		var draggables = default_values;
 	}
 
 
-	for (var i=0;i<8;i++){
-
-		$('#'+draggables[i][0]).draggable(
-
+	function draggableGenerator(idname, default_position)
+	{
+		$('#' + idname).draggable(
 		{
-
 			containment: $('container'),
-			drag: function(){
+			drag: function()
+			{
 				var offset = $(this).offset();
 				var xPos = offset.left;
 
@@ -44,41 +52,39 @@ $(function() {
 				$('input[name=' +this.id+']').val('x: ' + xPos);
 			},
 
-
-
-			create: function(event, ui){
+			create: function(event, ui)
+			{
 
 				//if no database entry exists, place icons in default position
 				if(typeof entries[0] === 'undefined')
 				{
-					$(this).css("top", draggables[i][1]+"px");
+					$(this).css("top", default_position + "px");
 				}
 				else
 				{
 					//check each entry- if set, place icon in that position
 					if(entries[0][this.id] != null)
 				 	{
-						 $(this).css("left",draggables[i][1]+"px"); 
-						 $(this).css("top","131px"); 
+						 $(this).css("left", default_position + "px"); 
+						 $(this).css("top","116px"); 
 						 $(this).css("height","75px");
 						 $(this).css("width","75px");
 					}
 					else
 					{
 						//put each icon in default position
-						$(this).css("top", draggables[i][1]+"px");
+						$(this).css("top", default_position + "px");
 
 					}
 
 				}
 
-				
-
-
+				//x and y coordinates of icon offset
 				var finalOffset = $(this).position();
 				var finalxPos = finalOffset.left;
 				var finalyPos = finalOffset.top;
 
+				//if x position is default (not on the chart), set input to 0, otherwise set input to new x value
 				if(finalxPos == 25)
 				{
 					$('input[name=' +this.id+']').val(0);
@@ -89,17 +95,17 @@ $(function() {
 				}
 				$('input[name=' +this.id+'y]').val(finalyPos);
 
-
-
-
-
-
 			},
 
-			stop: function(event,ui){
+			stop: function(event, ui)
+			{
+
+				//x and y coordinates of icon offset
 				var finalOffset = $(this).position();
 				var finalxPos = finalOffset.left;
 				var finalyPos = finalOffset.top;
+
+				//if x position is default (not on the chart), set input to 0, otherwise set input to new x value
 				if(finalxPos == 25)
 				{
 					$('input[name=' +this.id+']').val(0);
@@ -110,67 +116,79 @@ $(function() {
 				}
 				$('input[name=' +this.id+'y]').val(finalyPos);
 			},
-			revert: function (event, ui) {
-            //overwrite original position
-			for(var count=0; count < draggables.length; count++){
-				if(draggables[count][0] == $(this).attr("id")){
-				var default_y = default_values[count][1];	
-				}
-			}
 
-            $(this).data("uiDraggable").originalPosition = {
-                top: default_y,
-                left: 25				
-            };
-            //return boolean
-            return !event;	
-        }
+			revert: function (event, ui) 
+			{
+	            //Overwrite original position.
+				var default_y = default_values[$(this).attr("id")];	
 
+	            $(this).data("uiDraggable").originalPosition = {
+	                top: default_y,
+	                left: 25				
+	            };
+	            //return boolean
+         	   return !event;	
+       		 }
 
-    });
-};
-
-
-$('#sleep_dropHere').droppable(
-{
-	accept: '#start, #stop, #interruption0, #interruption1, #interruption2, #note0, #note1, #note2',
-	tolerance:"fit",
-	over:  function(event, ui){
-
-		var id = ui.draggable.attr('id');
-		$('#'+id).animate({
-			'height' : '75px',
-			'width' : '75px',
-			'border-color' : '#0f0'
-		}, 500);
-
-	},
-
-	drop: function(event, ui) {
-		var id = ui.draggable.attr('id');
-		var drop_p = $(this).offset();
-		var drag_p = ui.draggable.offset();
-		var top_end = drop_p.top - drag_p.top + 1;
-		ui.draggable.animate({
-			top: '+=' + top_end
 		});
-	
-	},
+
+		$('#sleep_dropHere').droppable(
+		{
+			accept: '#start, #stop, #interruption0, #interruption1, #interruption2, #note0, #note1, #note2',
+			tolerance:"fit",
+			over:  function(event, ui)
+			{
+
+				var id = ui.draggable.attr('id');
+				$('#'+id).animate(
+				{
+					'height' : '75px',
+					'width' : '75px',
+					'border-color' : '#0f0'
+				}, 500);
+			},
+
+			drop: function(event, ui) 
+			{
+				var id = ui.draggable.attr('id');
+				var drop_p = $(this).offset();
+				var drag_p = ui.draggable.offset();
+				var top_end = drop_p.top - drag_p.top + 1;
+				ui.draggable.animate(
+				{
+					top: '+=' + top_end
+				});
+			
+			},
 
 
 
-	out: function(event, ui){
+			out: function(event, ui)
+			{
+				var id = ui.draggable.attr('id');
+				$('#'+id).animate(
+				{
+					'height' : '50px',
+					'width' : '50px',
+					'border-color' : '#0f0'
+				}, 500);
+			}
+		});
+	};
 
-		var id = ui.draggable.attr('id');
-		$('#'+id).animate({
-			'height' : '50px',
-			'width' : '50px',
-			'border-color' : '#0f0'
-		}, 500);
-	}
-	
-});
-});
+ $(function() {
+ 	draggableGenerator('start', draggables['start']);
+ 	draggableGenerator('interruption0', draggables['interruption0']);
+ 	draggableGenerator('interruption1', draggables['interruption1']);
+ 	draggableGenerator('interruption2', draggables['interruption2']);
+ 	draggableGenerator('note0', draggables['note0']);
+ 	draggableGenerator('note1', draggables['note1']);
+ 	draggableGenerator('note2', draggables['note2']);
+ 	draggableGenerator('stop', draggables['stop']);
+ });
+
+
+
 </script>
 	
 

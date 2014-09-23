@@ -92,6 +92,7 @@ Route::group(array('before' => array('auth', 'caretaker_role')), function()
 
 
 
+//Uncomment to see last queries
 
 // Event::listen('illuminate.query', function() {
 //     print_r(func_get_args());

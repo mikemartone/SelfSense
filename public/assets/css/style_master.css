@@ -7,12 +7,51 @@ body {
 }
 
 .error{
-	color: red;
+	display: inline;
+	color: #FF7373;
 	position:relative;
-	margin-top:-5px;
-	margin-left:33px;
-	font-size:16px;
+	font-size:12px;
 	font-weight: bold;
+	vertical-align: center;
+}
+
+.error_background{
+	margin-top:5px;
+	background-color:#FFE3E3;
+	padding:5px;
+	border-radius: 5px;
+	position: relative;
+
+}
+
+.errors_container{
+	margin-top:40px;
+	width:500px;
+}
+
+.validation_error{
+	display: inline;
+	width:15px;
+	vertical-align: center;
+
+}
+
+.alert{
+	margin-left:10px;
+	display:inline;
+	color: #575757;
+	font-family: swiss_light;
+	font-size: 20px;
+
+}
+
+.alert_background{
+	margin: 5px 5px 5px 5px;
+	background-color: #FFF7C4;
+	padding-top:1px;
+	border: 1px solid orange;
+	height:30px;
+	border-radius: 5px;
 }
 
 textarea{
@@ -43,6 +82,7 @@ th {
 li{
 	display:inline;
 }
+
 
 /* fonts ---------------------------------------------------------------*/
 @font-face{
@@ -173,9 +213,10 @@ li{
 	height:40px;
 	display:inline;
 	float:left;
-	background:blue;
+	margin-top: -5px;
 }
 .profile_pic img{
+	padding-bottom: 5px;
 	width:40px;
 	height:40px;
 }
@@ -2440,9 +2481,9 @@ iframe{
 	font-size:25px;
 	line-height:40px;
 	color:#2e75b6;
-	margin:0 15px 0 0;
 	display:inline;
 	float:left;
+	margin-bottom: 10px;
 }
 
 #reg_box{
@@ -2472,3 +2513,5 @@ iframe{
 	color:black;
 	text-decoration: none;
 }
+
+

@@ -14,10 +14,10 @@
 <body>
 <!-- banner ---------------------------------------------------------------------------------------------------------->
 	<div class="banner_content">
-		<img src="http://www.selfsense.co/site_flat/logo_white04.png" class="banner_leaf" />
+		<img src="{{asset('assets/images/logo_white04.png')}}" class="banner_leaf" />
 		<p class="banner_selfsense">SelfSense</p>
 		<ul class="nav_menu">
-			<li><a href="default.asp">home</a></li>
+			<li><a href="{{  URL::to('/')  }}">home</a></li>
 			<li><a href="news.asp">technology</a></li>
 			<li><a href="contact.asp">about us</a></li>
 			<li><a href="about.asp">news</a></li>
@@ -34,7 +34,7 @@
 <!-- footer ------------------------------------------------------------------------------------------------------>
 	<div id="footer">	
 		<p id="corp-footer" >SelfSense Technology</p>
-		<p id="copyright-footer">2013</p>
+		<p id="copyright-footer">2014</p>
 	</div>
 </body>
 

@@ -27,10 +27,7 @@ class DashboardController extends BaseController {
 
 		foreach($meddata as $row)
 		{
-			//echo strtotime($row->entries_created_at)*1000;
-			//echo gettype($row->percentage);
 			$med_array[] = [strtotime($row->entries_created_at)*1000, 100*$row->percentage];
-			//array_push($med_array, array('Date.UTC(' . $row->date . ')', $row->percentage));
 		}
 
 		$sleep_array = array();

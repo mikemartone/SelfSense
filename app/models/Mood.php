@@ -11,14 +11,6 @@ class Mood extends Eloquent {
 	protected $table = 'moods';
 
 	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = array('password');
-
-
-	/**
 	 * Return todays entries
 	 *
 	 * @return array

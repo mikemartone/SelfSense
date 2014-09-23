@@ -7,6 +7,17 @@
 			@if(Session::has('message'))
 	            <p class="alert">{{ Session::get('message') }}</p>
 	        @endif
+
+
+	        <div class="errors_container">
+ 				@foreach($errors->all() as $error)
+ 					<div class="error_background">
+ 						<img class="validation_error" src="{{  asset('assets/images/error.png')  }}">
+ 	            		<li class="error"> {{ $error }}</li>
+ 						
+ 	            	</div>
+ 	       		@endforeach
+ 	       	</div>
 		
 		<!-- box 1 -->
 		<div id="login-box1">
@@ -17,7 +28,8 @@
 		
 		<!-- spacer -->
 		<div id="center-line"></div>
-		
+	
+
 		<!-- box 2 -->
 		<div id="login-box2">
 			<div id="login-form">
@@ -39,7 +51,7 @@
 					</table>
 					{{ Form::close() }}
 			</div>
-			<p id="register">not a SelfSense user? register here</p>
+			<p id="register">not a SelfSense user? register <a href="registration">here</a></p>
 		</div>
 	</div>
 @stop

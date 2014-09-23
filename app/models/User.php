@@ -60,7 +60,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('Mood')->where('created_at', '>=', new DateTime('today'));
 	}
 
-		/**
+	/**
 	 * Return last night's sleep entries
 	 *
 	 * @return array

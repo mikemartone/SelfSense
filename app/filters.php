@@ -113,3 +113,17 @@ Route::filter('user_role', function()
 		return Response::view('404');
 	}
 });
+
+/*
+|--------------------------------------------------------------------------
+| Missing Page Filter
+|--------------------------------------------------------------------------
+|
+| The Missing Page filter is responsible for directing incorrect requests to
+  an error page
+*/
+  
+App::missing(function($exception)
+{
+    return Response::view('404', array(), 404);
+});

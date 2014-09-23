@@ -38,9 +38,29 @@ class RegistrationController extends BaseController {
 			$user->updated_at = new DateTime;
        		$user->created_at = new DateTime;
        		$user->access_level = 0;
-       		$user->save();
 
-			return Redirect::to('/')->with('message', 'Thanks for registering!');
+       		if($user->save())
+       		{
+       			$credentials = array('username' => $input['username'], 'password' => $input['password']);
+
+       			if(Auth::attempt($credentials))
+       			{
+       				return Redirect::to('login')->with('message', 'Thank you for registering, and welcome to SelfSense!');
+       			}
+
+       			else
+       			{
+       				return Redirect::to('registration')->withErrors($v);
+       			}
+
+       			
+       		}
+
+       		else
+       		{
+       			return Redirect::to('/')->with('message', 'Error inserting record into database');
+       		}
+			
 		}
 	}
 

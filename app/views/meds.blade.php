@@ -117,18 +117,18 @@ $(function() {
 		{{ Form::open(array('url' => 'medication/entries', 'name' => 'inputs')) }}		
 		<div id="pillbox">
 			<div class="day_col">
-				<div class="day_of_week">tue</div>
+				<div class="day_of_week">{{  date('D', time() - 60 * 60 * 48)  }}</div>
 				<div class="pill_area_am" id="pill_area_dbyam"></div>
 				<div class="pill_area_pm" id="pill_area_dbypm"></div>
 			</div>
 			<div class="day_col">
-				<div class="day_of_week">wed</div>
+				<div class="day_of_week">{{  date('D', time() - 60 * 60 * 24)  }}</div>
 				<div class="pill_area_am" id="pill_area_yam"></div>
 				<div class="pill_area_pm" id="pill_area_ypm"></div>
 			</div>
 
 			<div class="day_col">
-				<div class="day_of_week" style="background:#2e75b6; color:#ffffff;">thu</div>
+				<div class="day_of_week" style="background:#2e75b6; color:#ffffff;">{{  date('D')  }}</div>
 				<div class="pill_area_am" id="pill_area_am">
 										
 				</div>
